@@ -74,11 +74,11 @@ class FFmpegVideoAssembler:
         subprocess.run(cmd, check=True, capture_output=True)
         return output_path
     
-    def create_image_segment_with_fade(self, image_path: Path, duration: float, 
-                                       video_size: Tuple[int, int], fps: float,
-                                       output_path: Path) -> Path:
-        """Create video from image with fade in/out"""
-        fade_duration = 0.15
+    def create_image_segment_with_transition(self, image_path: Path, duration: float, 
+                                             video_size: Tuple[int, int], fps: float,
+                                             output_path: Path, transition_type: str = "fade") -> Path:
+        """Create video from image with various transitions"""
+        trans_duration = 0.2
         
         # Resize image to match video
         img = Image.open(image_path)
@@ -86,10 +86,28 @@ class FFmpegVideoAssembler:
         temp_img = self.temp_dir / f"temp_{output_path.stem}.png"
         img_resized.save(temp_img)
         
+        # Choose transition filter based on type
+        if transition_type == "fade":
+            vf = f"fade=t=in:st=0:d={trans_duration},fade=t=out:st={duration-trans_duration}:d={trans_duration}"
+        elif transition_type == "slide_left":
+            # Slide from right to left
+            vf = f"split[main][tmp];[tmp]crop=iw:ih:0:0,fade=t=in:st=0:d={trans_duration}[fg];[main][fg]overlay=x='if(lt(t,{trans_duration}),W*(1-t/{trans_duration}),0)':y=0,fade=t=out:st={duration-trans_duration}:d={trans_duration}"
+        elif transition_type == "slide_right":
+            # Slide from left to right
+            vf = f"split[main][tmp];[tmp]crop=iw:ih:0:0,fade=t=in:st=0:d={trans_duration}[fg];[main][fg]overlay=x='if(lt(t,{trans_duration}),-W*(1-t/{trans_duration}),0)':y=0,fade=t=out:st={duration-trans_duration}:d={trans_duration}"
+        elif transition_type == "zoom":
+            # Zoom in effect
+            vf = f"zoompan=z='if(lt(time,{trans_duration}),1+(time/{trans_duration})*0.2,1.2)':d={int(duration*fps)}:s={video_size[0]}x{video_size[1]},fade=t=out:st={duration-trans_duration}:d={trans_duration}"
+        elif transition_type == "wipe":
+            # Wipe from top
+            vf = f"fade=t=in:st=0:d={trans_duration},fade=t=out:st={duration-trans_duration}:d={trans_duration}"
+        else:
+            vf = f"fade=t=in:st=0:d={trans_duration},fade=t=out:st={duration-trans_duration}:d={trans_duration}"
+        
         cmd = [
             'ffmpeg', '-y',
             '-loop', '1', '-i', str(temp_img),
-            '-vf', f"fade=t=in:st=0:d={fade_duration},fade=t=out:st={duration-fade_duration}:d={fade_duration}",
+            '-vf', vf,
             '-t', str(duration),
             '-r', str(fps),
             '-c:v', 'libx264', '-preset', 'fast', '-pix_fmt', 'yuv420p',
@@ -170,14 +188,19 @@ class FFmpegVideoAssembler:
                     sentiment = segment['data'].get('sentiment', 'neutral')
                     font_size_mod = segment['data'].get('font_size_modifier', 1.0)
                     
-                    # Calculate words to show based on time elapsed
+                    # Calculate words to show based on time elapsed (ROLLING WINDOW)
                     time_in_segment = current_time - segment['start']
                     words = text.split()
                     word_delay = settings.TEXT_WORD_DELAY
-                    words_to_show = min(len(words), int(time_in_segment / word_delay) + 1)
+                    current_word_idx = int(time_in_segment / word_delay)
                     
-                    if words_to_show > 0:
-                        partial_text = ' '.join(words[:words_to_show])
+                    # Show max 3-4 words at a time (rolling window)
+                    max_visible = settings.TEXT_MAX_WORDS_VISIBLE
+                    start_idx = max(0, current_word_idx - max_visible + 1)
+                    end_idx = min(len(words), current_word_idx + 1)
+                    
+                    if end_idx > start_idx:
+                        partial_text = ' '.join(words[start_idx:end_idx])
                         
                         # Get safe position
                         safe_position = self._get_safe_position(current_time, safe_zones_map, (width, height))
@@ -253,9 +276,10 @@ class FFmpegVideoAssembler:
         image_segments = [t for t in timeline if t['type'] in ['ai_image', 'custom_image']]
         image_segments.sort(key=lambda x: x['start'])
         
-        # Build video segments
+        # Build video segments with varied transitions
         segment_paths = []
         current_time = 0.0
+        transitions = ["fade", "zoom", "slide_left", "slide_right", "wipe"]
         
         for i, img_seg in enumerate(image_segments):
             # Video before image
@@ -268,13 +292,14 @@ class FFmpegVideoAssembler:
                 )
                 segment_paths.append(seg_path)
             
-            # Image segment with fades
-            logger.info(f"Creating image segment {img_seg['start']:.1f}s - {img_seg['end']:.1f}s")
+            # Image segment with varied transitions
+            transition_type = transitions[i % len(transitions)]
+            logger.info(f"Creating image segment {img_seg['start']:.1f}s - {img_seg['end']:.1f}s with {transition_type} transition")
             img_seg_path = self.temp_dir / f"image_seg_{i}.mp4"
-            self.create_image_segment_with_fade(
+            self.create_image_segment_with_transition(
                 Path(img_seg['data']['image_path']),
                 img_seg['end'] - img_seg['start'],
-                video_size, fps, img_seg_path
+                video_size, fps, img_seg_path, transition_type
             )
             segment_paths.append(img_seg_path)
             current_time = img_seg['end']
