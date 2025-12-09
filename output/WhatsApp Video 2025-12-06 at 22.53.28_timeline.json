@@ -1,0 +1,139 @@
+{
+  "segments": [
+    {
+      "start_time": 0.0,
+      "end_time": 6.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "1 month left, feeling confused and unsure."
+      }
+    },
+    {
+      "start_time": 6.0,
+      "end_time": 12.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Failed CA due to aggregate, considered quitting."
+      }
+    },
+    {
+      "start_time": 12.0,
+      "end_time": 14.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Almost skipped my attempt."
+      }
+    },
+    {
+      "start_time": 14.0,
+      "end_time": 22.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "30 days left, no strategy, panic mode!"
+      }
+    },
+    {
+      "start_time": 22.0,
+      "end_time": 31.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Gave up hope, unprepared for exams."
+      }
+    },
+    {
+      "start_time": 31.0,
+      "end_time": 37.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Studied 2-3 hours, felt demotivated."
+      }
+    },
+    {
+      "start_time": 37.0,
+      "end_time": 42.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Out of time, mistakes were made."
+      }
+    },
+    {
+      "start_time": 42.0,
+      "end_time": 46.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Worried about answering as ICI expects"
+      }
+    },
+    {
+      "start_time": 46.0,
+      "end_time": 50.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "10 years in CA journey"
+      }
+    },
+    {
+      "start_time": 50.0,
+      "end_time": 56.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Grateful for your support in passing the exam!"
+      }
+    },
+    {
+      "start_time": 56.0,
+      "end_time": 62.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Decision avoided another group fund attempt"
+      }
+    },
+    {
+      "start_time": 62.0,
+      "end_time": 68.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Boosted confidence to ace CA in one month!"
+      }
+    },
+    {
+      "start_time": 68.0,
+      "end_time": 73.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "Studied 14 hours after your workshop!"
+      }
+    },
+    {
+      "start_time": 73.0,
+      "end_time": 78.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "30 days to create magic"
+      }
+    },
+    {
+      "start_time": 78.0,
+      "end_time": 82.0,
+      "type": "text",
+      "priority": 10,
+      "data": {
+        "text": "With Rucha ma'am, become a CA!"
+      }
+    }
+  ]
+}

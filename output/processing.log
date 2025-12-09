@@ -1,0 +1,349 @@
+2025-12-06 22:58:15 | __main__ | INFO | __init__:30 | Video Editor Automation initialized
+2025-12-06 22:58:15 | __main__ | INFO | __init__:31 | Cache directory: C:\Perforce\qa\ScalingDetector\video_editor_automation\cache
+2025-12-06 22:58:15 | __main__ | INFO | __init__:32 | Output directory: C:\Perforce\qa\ScalingDetector\video_editor_automation\output
+2025-12-06 22:58:15 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 22:58:15 | __main__ | INFO | log_section:55 |  Processing Video: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-06 22:58:15 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 22:58:15 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 22:58:15 | __main__ | INFO | log_section:55 |  Phase 1: Audio Extraction & Transcription
+2025-12-06 22:58:15 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 22:58:16 | video_editor_automation.core.audio_processor | INFO | __init__:34 | Audio processor initialized
+2025-12-06 22:58:16 | video_editor_automation.core.audio_processor | INFO | process_video:191 | Starting audio processing for: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-06 22:58:16 | video_editor_automation.core.audio_processor | INFO | extract_audio:46 | Extracting audio from WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-06 22:58:17 | video_editor_automation.core.audio_processor | INFO | extract_audio:67 | Audio extracted successfully: C:\Perforce\qa\ScalingDetector\video_editor_automation\temp\WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3
+2025-12-06 22:58:17 | video_editor_automation.core.audio_processor | INFO | transcribe_audio:84 | Transcribing audio: WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3 (language: hi)
+2025-12-06 22:58:51 | video_editor_automation.core.audio_processor | INFO | transcribe_audio:99 | Transcription completed: 171 words
+2025-12-06 22:58:51 | video_editor_automation.core.audio_processor | INFO | translate_to_english:147 | Translating audio to English: WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3
+2025-12-06 22:58:59 | video_editor_automation.core.audio_processor | INFO | translate_to_english:157 | Translation completed
+2025-12-06 22:58:59 | video_editor_automation.core.audio_processor | INFO | process_video:210 | Audio processing completed successfully
+2025-12-06 22:58:59 | video_editor_automation.core.audio_processor | INFO | get_phrases_from_segments:269 | Created 12 phrases from 12 segments
+2025-12-06 22:58:59 | __main__ | INFO | process_video:106 | Created 12 phrases for display
+2025-12-06 22:58:59 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 22:58:59 | __main__ | INFO | log_section:55 |  Phase 2: Content Analysis
+2025-12-06 22:58:59 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 22:59:00 | video_editor_automation.core.content_analyzer | INFO | __init__:31 | Content analyzer initialized
+2025-12-06 22:59:00 | __main__ | INFO | process_video:114 | Analyzing segments for visualization opportunities...
+2025-12-06 22:59:00 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:251 | Batch analyzing 12 segments
+2025-12-06 22:59:00 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:02 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:03 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:04 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:05 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:06 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:07 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:09 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:11 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:11 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:11 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:273 | Analyzed 10/12 segments
+2025-12-06 22:59:12 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:12 | video_editor_automation.core.content_analyzer | ERROR | analyze_segment:80 | Content analysis failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:12 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:282 | Analysis complete: 0 segments need visualization
+2025-12-06 22:59:12 | __main__ | INFO | process_video:122 | Found 0 segments needing visualization
+2025-12-06 22:59:12 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 22:59:12 | __main__ | INFO | log_section:55 |  Phase 3: Face Detection & Safe Zones
+2025-12-06 22:59:12 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 22:59:12 | video_editor_automation.core.face_detector | WARNING | __init__:50 | MediaPipe not available, falling back to OpenCV
+2025-12-06 22:59:12 | video_editor_automation.core.face_detector | INFO | process_video:177 | Processing video for face detection: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-06 22:59:12 | video_editor_automation.core.face_detector | INFO | process_video:178 | Analyzing every 5 frames
+2025-12-06 22:59:15 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 20 frames (4.8%)
+2025-12-06 22:59:16 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 40 frames (9.8%)
+2025-12-06 22:59:16 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 60 frames (14.9%)
+2025-12-06 22:59:16 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 80 frames (19.9%)
+2025-12-06 22:59:17 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 100 frames (25.0%)
+2025-12-06 22:59:17 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 120 frames (30.0%)
+2025-12-06 22:59:17 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 140 frames (35.1%)
+2025-12-06 22:59:17 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 160 frames (40.1%)
+2025-12-06 22:59:18 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 180 frames (45.2%)
+2025-12-06 22:59:18 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 200 frames (50.2%)
+2025-12-06 22:59:18 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 220 frames (55.3%)
+2025-12-06 22:59:19 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 240 frames (60.3%)
+2025-12-06 22:59:19 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 260 frames (65.4%)
+2025-12-06 22:59:19 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 280 frames (70.4%)
+2025-12-06 22:59:19 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 300 frames (75.5%)
+2025-12-06 22:59:20 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 320 frames (80.5%)
+2025-12-06 22:59:20 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 340 frames (85.6%)
+2025-12-06 22:59:20 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 360 frames (90.6%)
+2025-12-06 22:59:21 | video_editor_automation.core.face_detector | INFO | process_video:210 | Processed 380 frames (95.7%)
+2025-12-06 22:59:21 | video_editor_automation.core.face_detector | INFO | process_video:218 | Face detection complete: analyzed 397 frames
+2025-12-06 22:59:21 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 22:59:21 | __main__ | INFO | log_section:55 |  Phase 4: Image Generation
+2025-12-06 22:59:21 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 22:59:21 | video_editor_automation.core.image_generator | INFO | __init__:35 | Image generator initialized
+2025-12-06 22:59:21 | __main__ | INFO | process_video:175 | Generated/cached 0 images
+2025-12-06 22:59:21 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 22:59:21 | __main__ | INFO | log_section:55 |  Phase 5: Timeline Management
+2025-12-06 22:59:21 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 22:59:21 | video_editor_automation.core.timeline_manager | INFO | __init__:49 | Timeline manager initialized
+2025-12-06 22:59:22 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:22 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:23 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:23 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:24 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:24 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:25 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:25 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:25 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:26 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:27 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:28 | video_editor_automation.core.content_analyzer | ERROR | summarize_for_text_overlay:138 | Text summarization failed: Error code: 400 - {'error': {'message': "Invalid parameter: 'response_format' of type 'json_object' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'response_format', 'code': None}}
+2025-12-06 22:59:28 | video_editor_automation.core.timeline_manager | INFO | find_conflicts:129 | Found 0 conflict groups
+2025-12-06 22:59:28 | __main__ | INFO | process_video:226 | Timeline stats: {'total_segments': 12, 'text_segments': 12, 'ai_images': 0, 'custom_images': 0, 'conflicts': 0}
+2025-12-06 22:59:28 | video_editor_automation.utils.text_renderer | WARNING | _get_font_path:47 | No Hindi font found, using default font
+2025-12-06 22:59:28 | video_editor_automation.utils.text_renderer | INFO | __init__:27 | Text renderer initialized with font: None
+2025-12-06 22:59:28 | video_editor_automation.core.video_assembler | INFO | __init__:34 | Video assembler initialized
+2025-12-06 22:59:29 | video_editor_automation.core.video_assembler | INFO | get_video_info:85 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-06 22:59:29 | video_editor_automation.core.timeline_manager | INFO | build_render_timeline:194 | Building render timeline...
+2025-12-06 22:59:29 | video_editor_automation.core.timeline_manager | INFO | resolve_conflicts:139 | Resolving timeline conflicts...
+2025-12-06 22:59:29 | video_editor_automation.core.timeline_manager | INFO | find_conflicts:129 | Found 0 conflict groups
+2025-12-06 22:59:29 | video_editor_automation.core.timeline_manager | INFO | resolve_conflicts:144 | No conflicts to resolve
+2025-12-06 22:59:29 | video_editor_automation.core.timeline_manager | INFO | build_render_timeline:274 | Timeline built: 13 events
+2025-12-06 22:59:29 | video_editor_automation.core.timeline_manager | INFO | export_timeline:295 | Timeline exported to: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_timeline.json
+2025-12-06 22:59:29 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 22:59:29 | __main__ | INFO | log_section:55 |  Phase 6: Final Video Assembly
+2025-12-06 22:59:29 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 22:59:29 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:413 | Starting final video assembly
+2025-12-06 22:59:29 | video_editor_automation.core.video_assembler | INFO | get_video_info:85 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-06 22:59:29 | video_editor_automation.core.video_assembler | INFO | add_text_overlay_to_video:225 | Adding 12 text overlays
+2025-12-06 22:59:29 | video_editor_automation.core.video_assembler | INFO | get_video_info:85 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-06 22:59:29 | __main__ | ERROR | main:406 | Processing failed: 'latin-1' codec can't encode characters in position 1-4: ordinal not in range(256)
+Traceback (most recent call last):
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\main.py", line 395, in main
+    output_video = cli.process_video(
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\main.py", line 254, in process_video
+    final_video = video_assembler.assemble_final_video(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\core\video_assembler.py", line 478, in assemble_final_video
+    final_video = self.add_text_overlay_to_video(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\core\video_assembler.py", line 249, in add_text_overlay_to_video
+    self.text_renderer.save_text_overlay(
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\utils\text_renderer.py", line 191, in save_text_overlay
+    img = self.create_text_image(text, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\utils\text_renderer.py", line 96, in create_text_image
+    wrapped_text = self._wrap_text(text, font, max_width, draw)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\utils\text_renderer.py", line 151, in _wrap_text
+    bbox = draw.textbbox((0, 0), text, font=font)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gmantri\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\PIL\ImageDraw.py", line 699, in textbbox
+    bbox = font.getbbox(
+           ^^^^^^^^^^^^^
+  File "C:\Users\gmantri\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\PIL\ImageFont.py", line 165, in getbbox
+    width, height = self.font.getsize(text)
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 1-4: ordinal not in range(256)
+2025-12-06 23:03:53 | __main__ | INFO | __init__:30 | Video Editor Automation initialized
+2025-12-06 23:03:53 | __main__ | INFO | __init__:31 | Cache directory: C:\Perforce\qa\ScalingDetector\video_editor_automation\cache
+2025-12-06 23:03:53 | __main__ | INFO | __init__:32 | Output directory: C:\Perforce\qa\ScalingDetector\video_editor_automation\output
+2025-12-06 23:03:53 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 23:03:53 | __main__ | INFO | log_section:55 |  Processing Video: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-06 23:03:53 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 23:03:53 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 23:03:53 | __main__ | INFO | log_section:55 |  Phase 1: Audio Extraction & Transcription
+2025-12-06 23:03:53 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 23:03:55 | video_editor_automation.core.audio_processor | INFO | __init__:34 | Audio processor initialized
+2025-12-06 23:03:55 | __main__ | INFO | process_video:85 | Using cached transcription
+2025-12-06 23:03:55 | video_editor_automation.core.audio_processor | INFO | get_phrases_from_segments:269 | Created 15 phrases from 15 segments
+2025-12-06 23:03:55 | __main__ | INFO | process_video:119 | Created 15 phrases for display
+2025-12-06 23:03:55 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 23:03:55 | __main__ | INFO | log_section:55 |  Phase 2: Content Analysis
+2025-12-06 23:03:55 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 23:03:55 | video_editor_automation.core.content_analyzer | INFO | __init__:31 | Content analyzer initialized
+2025-12-06 23:03:55 | __main__ | INFO | process_video:127 | Analyzing segments for visualization opportunities...
+2025-12-06 23:03:55 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:251 | Batch analyzing 15 segments
+2025-12-06 23:04:30 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:273 | Analyzed 10/15 segments
+2025-12-06 23:04:42 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:282 | Analysis complete: 9 segments need visualization
+2025-12-06 23:04:42 | __main__ | INFO | process_video:135 | Found 9 segments needing visualization
+2025-12-06 23:04:42 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 23:04:42 | __main__ | INFO | log_section:55 |  Phase 3: Face Detection & Safe Zones
+2025-12-06 23:04:42 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 23:04:42 | video_editor_automation.core.face_detector | WARNING | __init__:50 | MediaPipe not available, falling back to OpenCV
+2025-12-06 23:04:42 | __main__ | INFO | process_video:146 | Using cached face detection data
+2025-12-06 23:04:42 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 23:04:42 | __main__ | INFO | log_section:55 |  Phase 4: Image Generation
+2025-12-06 23:04:42 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 23:04:42 | video_editor_automation.core.image_generator | INFO | __init__:35 | Image generator initialized
+2025-12-06 23:04:42 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A young adult sitting at a desk cluttered with tex...
+2025-12-06 23:04:58 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_1.png
+2025-12-06 23:04:58 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A young person sitting at a desk cluttered with bo...
+2025-12-06 23:05:16 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_2.png
+2025-12-06 23:05:16 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A young adult sitting at a cluttered desk with boo...
+2025-12-06 23:05:44 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_3.png
+2025-12-06 23:05:44 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A student sitting at a desk, surrounded by textboo...
+2025-12-06 23:06:02 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_4.png
+2025-12-06 23:06:02 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A person sitting at a cluttered desk with a calend...
+2025-12-06 23:06:31 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_6.png
+2025-12-06 23:06:31 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A supportive friend helping another person study f...
+2025-12-06 23:06:51 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_9.png
+2025-12-06 23:06:51 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A confident young adult standing in front of a lar...
+2025-12-06 23:07:07 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_11.png
+2025-12-06 23:07:07 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A group of diverse students sitting around a table...
+2025-12-06 23:07:24 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_13.png
+2025-12-06 23:07:24 | video_editor_automation.core.image_generator | INFO | generate_image:56 | Generating image: A motivational scene showing a confident woman, sy...
+2025-12-06 23:07:54 | video_editor_automation.core.image_generator | INFO | generate_image:87 | Image generated successfully: segment_14.png
+2025-12-06 23:07:54 | __main__ | INFO | process_video:188 | Generated/cached 9 images
+2025-12-06 23:07:54 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 23:07:54 | __main__ | INFO | log_section:55 |  Phase 5: Timeline Management
+2025-12-06 23:07:54 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 23:07:54 | video_editor_automation.core.timeline_manager | INFO | __init__:49 | Timeline manager initialized
+2025-12-06 23:08:16 | video_editor_automation.core.timeline_manager | INFO | find_conflicts:129 | Found 0 conflict groups
+2025-12-06 23:08:16 | __main__ | INFO | process_video:234 | Timeline stats: {'total_segments': 24, 'text_segments': 15, 'ai_images': 9, 'custom_images': 0, 'conflicts': 0}
+2025-12-06 23:08:16 | video_editor_automation.utils.text_renderer | WARNING | _get_font_path:47 | No Hindi font found, using default font
+2025-12-06 23:08:16 | video_editor_automation.utils.text_renderer | INFO | __init__:27 | Text renderer initialized with font: None
+2025-12-06 23:08:16 | video_editor_automation.core.video_assembler | INFO | __init__:34 | Video assembler initialized
+2025-12-06 23:08:18 | video_editor_automation.core.video_assembler | INFO | get_video_info:85 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-06 23:08:18 | video_editor_automation.core.timeline_manager | INFO | build_render_timeline:194 | Building render timeline...
+2025-12-06 23:08:18 | video_editor_automation.core.timeline_manager | INFO | resolve_conflicts:139 | Resolving timeline conflicts...
+2025-12-06 23:08:18 | video_editor_automation.core.timeline_manager | INFO | find_conflicts:129 | Found 0 conflict groups
+2025-12-06 23:08:18 | video_editor_automation.core.timeline_manager | INFO | resolve_conflicts:144 | No conflicts to resolve
+2025-12-06 23:08:18 | video_editor_automation.core.timeline_manager | INFO | build_render_timeline:274 | Timeline built: 48 events
+2025-12-06 23:08:18 | video_editor_automation.core.timeline_manager | INFO | export_timeline:295 | Timeline exported to: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_timeline.json
+2025-12-06 23:08:18 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 23:08:18 | __main__ | INFO | log_section:55 |  Phase 6: Final Video Assembly
+2025-12-06 23:08:18 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 23:08:18 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:413 | Starting final video assembly
+2025-12-06 23:08:18 | video_editor_automation.core.video_assembler | INFO | get_video_info:85 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-06 23:08:23 | video_editor_automation.core.video_assembler | INFO | concat_video_segments:369 | Concatenating 15 video segments
+2025-12-06 23:08:24 | video_editor_automation.core.video_assembler | INFO | concat_video_segments:389 | Concatenation complete: concatenated.mp4
+2025-12-06 23:08:24 | video_editor_automation.core.video_assembler | INFO | add_text_overlay_to_video:225 | Adding 15 text overlays
+2025-12-06 23:08:24 | video_editor_automation.core.video_assembler | INFO | get_video_info:85 | Video info: 480x848 @ 24.0fps, duration: 82.61s
+2025-12-06 23:08:24 | video_editor_automation.core.video_assembler | ERROR | _add_text_overlays_moviepy:273 | moviepy is required for text overlays
+2025-12-06 23:08:24 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:485 | Video assembly complete: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
+2025-12-06 23:08:24 | __main__ | INFO | log_section:54 | ============================================================
+2025-12-06 23:08:24 | __main__ | INFO | log_section:55 |  Processing Complete!
+2025-12-06 23:08:24 | __main__ | INFO | log_section:56 | ============================================================
+2025-12-06 23:08:24 | __main__ | INFO | process_video:271 | Output video: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
+2025-12-06 23:08:24 | __main__ | INFO | process_video:272 | Timeline data: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_timeline.json
+2025-12-06 23:08:24 | __main__ | INFO | _generate_report:316 | Report generated: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_report.txt
+2025-12-09 23:56:07,418 | __main__ | INFO | __init__:22 | Video Editor Automation initialized
+2025-12-09 23:56:07,418 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-09 23:56:07,418 | __main__ | INFO | log_section:29 |  Processing Video: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-09 23:56:07,418 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-09 23:56:07,418 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-09 23:56:07,418 | __main__ | INFO | log_section:29 |  Phase 1: Audio Extraction & Translation
+2025-12-09 23:56:07,424 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-09 23:56:08,671 | video_editor_automation.core.audio_processor | INFO | __init__:25 | Audio processor initialized
+2025-12-09 23:56:08,671 | __main__ | INFO | process_video:33 | Using cached transcription
+2025-12-09 23:56:08,671 | video_editor_automation.core.audio_processor | INFO | get_phrases_from_segments:88 | Created 15 phrases from 15 segments
+2025-12-09 23:56:08,671 | __main__ | INFO | process_video:52 | Created 15 phrases for display
+2025-12-09 23:56:08,671 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-09 23:56:08,671 | __main__ | INFO | log_section:29 |  Phase 2: Content Analysis
+2025-12-09 23:56:08,671 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-09 23:56:08,965 | video_editor_automation.core.content_analyzer | INFO | __init__:23 | Content analyzer initialized
+2025-12-09 23:56:08,965 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:93 | Batch analyzing 15 segments
+2025-12-09 23:57:02,528 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:107 | Analyzed 10/15 segments
+2025-12-09 23:57:18,273 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:123 | Analysis complete: 0 segments need visualization (limited to 3)
+2025-12-09 23:57:18,276 | __main__ | INFO | process_video:62 | Found 0 segments needing visualization
+2025-12-09 23:57:18,276 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-09 23:57:18,276 | __main__ | INFO | log_section:29 |  Phase 3: Face Detection & Safe Zones
+2025-12-09 23:57:18,276 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-09 23:57:18,321 | video_editor_automation.core.face_detector | INFO | __init__:26 | Face detector initialized: OpenCV Haar Cascade
+2025-12-09 23:57:18,321 | __main__ | INFO | process_video:70 | Using cached face detection data
+2025-12-09 23:57:18,321 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-09 23:57:18,321 | __main__ | INFO | log_section:29 |  Phase 4: Image Generation
+2025-12-09 23:57:18,321 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-09 23:57:18,669 | video_editor_automation.core.image_generator | INFO | __init__:27 | Image generator initialized
+2025-12-09 23:57:18,669 | __main__ | INFO | process_video:98 | Generated/cached 0 images
+2025-12-09 23:57:18,669 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-09 23:57:18,669 | __main__ | INFO | log_section:29 |  Phase 5: Timeline Management
+2025-12-09 23:57:18,669 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-09 23:57:18,669 | video_editor_automation.core.timeline_manager | INFO | __init__:27 | Timeline manager initialized
+2025-12-09 23:57:35,869 | __main__ | INFO | process_video:118 | Timeline stats: {'total_segments': 15, 'text_segments': 15, 'ai_images': 0, 'custom_images': 0, 'conflicts': 0}
+2025-12-09 23:57:35,869 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-09 23:57:36,936 | video_editor_automation.core.video_assembler | INFO | __init__:24 | Video assembler initialized
+2025-12-09 23:57:38,159 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-09 23:57:38,159 | video_editor_automation.core.timeline_manager | INFO | build_render_timeline:67 | Timeline built: 16 events
+2025-12-09 23:57:38,159 | video_editor_automation.core.timeline_manager | INFO | export_timeline:75 | Timeline exported to: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_timeline.json
+2025-12-09 23:57:38,159 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-09 23:57:38,159 | __main__ | INFO | log_section:29 |  Phase 6: Final Video Assembly
+2025-12-09 23:57:38,159 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-09 23:57:38,159 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:57 | Starting final video assembly with audio sync fixes
+2025-12-09 23:57:38,617 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-09 23:57:40,086 | __main__ | ERROR | main:176 | Processing failed: 'ImageClip' object has no attribute 'set_duration'
+Traceback (most recent call last):
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\main.py", line 173, in main
+    output_video = cli.process_video(args.input, skip_cache=args.skip_cache)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\main.py", line 134, in process_video
+    final_video = video_assembler.assemble_final_video(video_path, render_timeline, text_segments, safe_zones_map, output_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\core\video_assembler.py", line 71, in assemble_final_video
+    final_video = self._add_text_overlays_moviepy(video, text_segments, safe_zones_map, output_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\core\video_assembler.py", line 166, in _add_text_overlays_moviepy
+    text_clip = ImageClip(str(text_img_path)).set_duration(duration).set_start(start).set_position('center')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ImageClip' object has no attribute 'set_duration'
+2025-12-10 00:00:45,893 | __main__ | INFO | __init__:22 | Video Editor Automation initialized
+2025-12-10 00:00:45,893 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:00:45,893 | __main__ | INFO | log_section:29 |  Processing Video: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-10 00:00:45,893 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:00:45,893 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:00:45,893 | __main__ | INFO | log_section:29 |  Phase 1: Audio Extraction & Translation
+2025-12-10 00:00:45,893 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:00:46,268 | video_editor_automation.core.audio_processor | INFO | __init__:25 | Audio processor initialized
+2025-12-10 00:00:46,268 | video_editor_automation.core.audio_processor | INFO | extract_audio:28 | Extracting audio from WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-10 00:00:47,494 | video_editor_automation.core.audio_processor | INFO | extract_audio:33 | Audio extracted: C:\Perforce\qa\ScalingDetector\video_editor_automation\temp\WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3
+2025-12-10 00:00:47,494 | video_editor_automation.core.audio_processor | INFO | translate_to_english:40 | Translating audio to English: WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3
+2025-12-10 00:00:54,607 | video_editor_automation.core.audio_processor | INFO | translate_to_english:57 | Translation completed
+2025-12-10 00:00:54,607 | video_editor_automation.core.audio_processor | INFO | get_phrases_from_segments:88 | Created 15 phrases from 15 segments
+2025-12-10 00:00:54,607 | __main__ | INFO | process_video:52 | Created 15 phrases for display
+2025-12-10 00:00:54,607 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:00:54,607 | __main__ | INFO | log_section:29 |  Phase 2: Content Analysis
+2025-12-10 00:00:54,607 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:00:54,939 | video_editor_automation.core.content_analyzer | INFO | __init__:23 | Content analyzer initialized
+2025-12-10 00:00:54,939 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:93 | Batch analyzing 15 segments
+2025-12-10 00:01:30,749 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:107 | Analyzed 10/15 segments
+2025-12-10 00:01:52,190 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:123 | Analysis complete: 0 segments need visualization (limited to 3)
+2025-12-10 00:01:52,190 | __main__ | INFO | process_video:62 | Found 0 segments needing visualization
+2025-12-10 00:01:52,190 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:01:52,190 | __main__ | INFO | log_section:29 |  Phase 3: Face Detection & Safe Zones
+2025-12-10 00:01:52,190 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:01:52,222 | video_editor_automation.core.face_detector | INFO | __init__:26 | Face detector initialized: OpenCV Haar Cascade
+2025-12-10 00:01:52,222 | video_editor_automation.core.face_detector | INFO | process_video:70 | Processing video for face detection: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-10 00:01:55,246 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 20 frames (4.8%)
+2025-12-10 00:01:55,635 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 40 frames (9.8%)
+2025-12-10 00:01:56,063 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 60 frames (14.9%)
+2025-12-10 00:01:56,425 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 80 frames (19.9%)
+2025-12-10 00:01:56,784 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 100 frames (25.0%)
+2025-12-10 00:01:57,151 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 120 frames (30.0%)
+2025-12-10 00:01:57,487 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 140 frames (35.1%)
+2025-12-10 00:01:57,866 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 160 frames (40.1%)
+2025-12-10 00:01:58,246 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 180 frames (45.2%)
+2025-12-10 00:01:58,621 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 200 frames (50.2%)
+2025-12-10 00:01:58,927 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 220 frames (55.3%)
+2025-12-10 00:01:59,229 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 240 frames (60.3%)
+2025-12-10 00:01:59,625 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 260 frames (65.4%)
+2025-12-10 00:02:00,029 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 280 frames (70.4%)
+2025-12-10 00:02:00,447 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 300 frames (75.5%)
+2025-12-10 00:02:00,869 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 320 frames (80.5%)
+2025-12-10 00:02:01,304 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 340 frames (85.6%)
+2025-12-10 00:02:01,670 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 360 frames (90.6%)
+2025-12-10 00:02:02,027 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 380 frames (95.7%)
+2025-12-10 00:02:02,418 | video_editor_automation.core.face_detector | INFO | process_video:95 | Face detection complete: analyzed 397 frames
+2025-12-10 00:02:02,428 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:02:02,428 | __main__ | INFO | log_section:29 |  Phase 4: Image Generation
+2025-12-10 00:02:02,428 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:02:02,818 | video_editor_automation.core.image_generator | INFO | __init__:27 | Image generator initialized
+2025-12-10 00:02:02,818 | __main__ | INFO | process_video:98 | Generated/cached 0 images
+2025-12-10 00:02:02,818 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:02:02,818 | __main__ | INFO | log_section:29 |  Phase 5: Timeline Management
+2025-12-10 00:02:02,818 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:02:02,818 | video_editor_automation.core.timeline_manager | INFO | __init__:27 | Timeline manager initialized
+2025-12-10 00:02:19,186 | __main__ | INFO | process_video:118 | Timeline stats: {'total_segments': 15, 'text_segments': 15, 'ai_images': 0, 'custom_images': 0, 'conflicts': 0}
+2025-12-10 00:02:19,186 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-10 00:02:19,733 | video_editor_automation.core.video_assembler | INFO | __init__:24 | Video assembler initialized
+2025-12-10 00:02:20,264 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-10 00:02:20,264 | video_editor_automation.core.timeline_manager | INFO | build_render_timeline:67 | Timeline built: 16 events
+2025-12-10 00:02:20,278 | video_editor_automation.core.timeline_manager | INFO | export_timeline:75 | Timeline exported to: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_timeline.json
+2025-12-10 00:02:20,278 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:02:20,278 | __main__ | INFO | log_section:29 |  Phase 6: Final Video Assembly
+2025-12-10 00:02:20,278 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:02:20,278 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:57 | Starting final video assembly with audio sync fixes
+2025-12-10 00:02:20,821 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-10 00:03:32,073 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:03:32,073 | __main__ | INFO | log_section:29 |  Processing Complete!
+2025-12-10 00:03:32,073 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:03:32,073 | __main__ | INFO | process_video:137 | Output video: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
