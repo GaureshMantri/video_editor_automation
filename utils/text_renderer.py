@@ -108,7 +108,10 @@ class TextRenderer:
     
     def save_text_overlay(self, text: str, output_path: Path, **kwargs) -> Path:
         img = self.create_text_image(text, **kwargs)
-        img.save(output_path)
-        logger.debug(f"Text overlay saved: {output_path.name}")
+        if img:
+            img.save(output_path)
+            logger.debug(f"Text overlay saved: {output_path.name}")
+        else:
+            logger.warning(f"Failed to create text image for: {text[:30]}")
         return output_path
 
