@@ -77,12 +77,12 @@ class VideoAssembler:
         current_time = 0
         
         for segment in image_segments:
-            # Add video before image
+            # Add video before image with crossfade
             if segment['start'] > current_time:
-                clip = video.subclip(current_time, segment['start'])
-                clips.append(clip)
+                video_clip = video.subclip(current_time, segment['start'])
+                clips.append(video_clip)
             
-            # Create 1-second image clip
+            # Create 1-second image clip with fade transitions
             image_path = Path(segment['data']['image_path'])
             duration = segment['end'] - segment['start']  # Should be 1 second
             
@@ -92,11 +92,19 @@ class VideoAssembler:
             resized_path = self.temp_dir / f"resized_{segment['start']}.png"
             img_resized.save(resized_path, quality=95)
             
-            # Create image clip with proper FPS (moviepy 2.x API)
+            # Create image clip with fade in/out transitions
             image_clip = ImageClip(str(resized_path), duration=duration)
             image_clip = image_clip.with_fps(fps)
-            clips.append(image_clip)
             
+            # Add fade in/out effects
+            fade_duration = 0.3
+            image_clip = image_clip.with_effects([
+                lambda clip, t: clip.with_opacity(min(1, t/fade_duration)) if t < fade_duration 
+                               else clip.with_opacity(min(1, (duration-t)/fade_duration)) if t > duration-fade_duration
+                               else clip
+            ])
+            
+            clips.append(image_clip)
             current_time = segment['end']
         
         # Add remaining video

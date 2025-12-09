@@ -29,19 +29,25 @@ Respond in JSON format:
 Be conservative - only suggest images that truly add value.
 """
 
-TEXT_SUMMARIZATION_PROMPT = """You are creating on-screen text for a video.
+TEXT_SUMMARIZATION_PROMPT = """You are creating on-screen text for a video (Instagram Reels format).
 
 Speech segment: "{segment_text}"
 
 Create a concise, impactful on-screen text that:
 - Captures the key point in {max_length} characters or less
 - Is easy to read quickly
+- Split into 2-3 short lines max
 - Emphasizes the most important information
+
+Also analyze the sentiment and visual styling:
 
 Respond in JSON format:
 {{
     "english_text": "summarized text in English",
-    "emphasis_words": ["word1", "word2"]
+    "sentiment": "important/happy/sad/angry/neutral/excited",
+    "font_size_modifier": 1.0-1.5,
+    "emphasis_words": ["word1", "word2"],
+    "text_position": "top/middle/bottom"
 }}
 """
 

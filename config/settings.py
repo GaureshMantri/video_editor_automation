@@ -19,20 +19,36 @@ TEMP_DIR.mkdir(parents=True, exist_ok=True)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
 # Content Analysis Settings
-MIN_IMPORTANCE_SCORE = 8  # Only generate images for scores >= 8 (more selective)
-MAX_IMAGES_PER_2_MINUTES = 5  # Maximum 5 images per 2 minutes
+MIN_IMPORTANCE_SCORE = 6  # Lower threshold, we'll select top ones
+MAX_IMAGES_TOTAL = 5  # Take top 5 images
+MIN_IMAGES_GUARANTEED = 3  # Minimum 3 images even if low scores
 IMAGE_DISPLAY_DURATION = 1.0  # Each image displays for exactly 1 second
 CONTEXT_WINDOW_SECONDS = 30
 MAX_TEXT_LENGTH = 60
 
 # Text Display Settings
-TEXT_FONT_SIZE = 48
-TEXT_COLOR = (255, 255, 255)
-TEXT_STROKE_COLOR = (0, 0, 0)
-TEXT_STROKE_WIDTH = 3
+TEXT_FONT_SIZE = 56  # Larger for phone/reels format
+TEXT_STROKE_WIDTH = 4  # Thicker stroke for better visibility
 TEXT_SHADOW = True
-TEXT_SHADOW_OFFSET = (2, 2)
-TEXT_BACKGROUND_OPACITY = 0.7
+TEXT_SHADOW_OFFSET = (3, 3)
+TEXT_BACKGROUND_OPACITY = 0.8
+TEXT_ANIMATION = "word_by_word"  # Animate text appearance
+TEXT_WORD_DELAY = 0.15  # Seconds between words appearing
+
+# Sentiment-based colors (RGB)
+SENTIMENT_COLORS = {
+    "important": (255, 215, 0),      # Gold/Yellow
+    "happy": (0, 255, 127),          # Green
+    "sad": (100, 149, 237),          # Blue
+    "angry": (255, 69, 0),           # Red
+    "neutral": (255, 255, 255),      # White
+    "excited": (255, 105, 180)       # Pink
+}
+
+# Vertical positioning for portrait videos (reels format)
+TEXT_POSITION_TOP = 0.15     # 15% from top
+TEXT_POSITION_BOTTOM = 0.75  # 75% from top (leaving space for bottom UI)
+TEXT_POSITION_MIDDLE = 0.5   # Middle
 
 # Face Detection Settings
 FACE_DETECTION_INTERVAL = 5

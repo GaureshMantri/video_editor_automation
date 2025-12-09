@@ -104,7 +104,17 @@ class VideoEditorCLI:
         for phrase in phrases:
             text_data = content_analyzer.summarize_for_text_overlay(phrase)
             display_text = text_data.get('english_text', phrase.get('text', ''))
-            timeline_manager.add_text_segment(phrase['start'], phrase['end'], {'text': display_text})
+            
+            # Add styling metadata
+            text_segment_data = {
+                'text': display_text,
+                'sentiment': text_data.get('sentiment', 'neutral'),
+                'font_size_modifier': text_data.get('font_size_modifier', 1.0),
+                'position_vertical': text_data.get('text_position', 'bottom'),
+                'emphasis_words': text_data.get('emphasis_words', [])
+            }
+            
+            timeline_manager.add_text_segment(phrase['start'], phrase['end'], text_segment_data)
         
         # FIX: Each image exactly 1 second
         for segment_id, image_path in generated_images.items():

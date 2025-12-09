@@ -33,11 +33,14 @@ class TextRenderer:
     
     def create_text_image(self, text: str, frame_size: Tuple[int, int], position: Tuple[int, int] = None,
                          font_size: int = None, text_color: Tuple[int, int, int] = None,
-                         stroke_color: Tuple[int, int, int] = None, stroke_width: int = None) -> Image:
+                         stroke_color: Tuple[int, int, int] = None, stroke_width: int = None,
+                         sentiment: str = "neutral", position_vertical: str = "bottom") -> Image:
         width, height = frame_size
         font_size = font_size or settings.TEXT_FONT_SIZE
-        text_color = text_color or settings.TEXT_COLOR
-        stroke_color = stroke_color or settings.TEXT_STROKE_COLOR
+        
+        # FIX: Use sentiment-based color
+        text_color = text_color or settings.SENTIMENT_COLORS.get(sentiment, settings.SENTIMENT_COLORS["neutral"])
+        stroke_color = (0, 0, 0)  # Always black stroke for readability
         stroke_width = stroke_width or settings.TEXT_STROKE_WIDTH
         
         img = Image.new('RGBA', (width, height), (0, 0, 0, 0))
@@ -56,11 +59,36 @@ class TextRenderer:
             logger.warning(f"Font load failed: {e}, skipping text")
             return img
         
+        # FIX: Position for portrait/reels format - avoid top/bottom cut-off
         if position is None:
-            position = (width // 2, int(height * 0.85))
+            if position_vertical == "top":
+                position = (width // 2, int(height * settings.TEXT_POSITION_TOP))
+            elif position_vertical == "middle":
+                position = (width // 2, int(height * settings.TEXT_POSITION_MIDDLE))
+            else:  # bottom
+                position = (width // 2, int(height * settings.TEXT_POSITION_BOTTOM))
         
-        # Simple text without complex wrapping
-        bbox = draw.textbbox((0, 0), text, font=font)
+        # FIX: Wrap text to multiple lines for better readability
+        words = text.split()
+        lines = []
+        current_line = []
+        max_width = int(width * 0.85)  # Use 85% of width to avoid cutoff
+        
+        for word in words:
+            test_line = ' '.join(current_line + [word])
+            bbox = draw.textbbox((0, 0), test_line, font=font)
+            if bbox[2] - bbox[0] <= max_width:
+                current_line.append(word)
+            else:
+                if current_line:
+                    lines.append(' '.join(current_line))
+                current_line = [word]
+        if current_line:
+            lines.append(' '.join(current_line))
+        
+        wrapped_text = '\n'.join(lines)
+        
+        bbox = draw.multiline_textbbox((0, 0), wrapped_text, font=font, align='center')
         text_width = bbox[2] - bbox[0]
         text_height = bbox[3] - bbox[1]
         
@@ -73,8 +101,8 @@ class TextRenderer:
             draw.rectangle([(x - padding, y - padding), (x + text_width + padding, y + text_height + padding)],
                          fill=(0, 0, 0, bg_opacity))
         
-        draw.text((x, y), text, font=font, fill=(*text_color, 255), stroke_width=stroke_width,
-                 stroke_fill=(*stroke_color, 255))
+        draw.multiline_text((x, y), wrapped_text, font=font, fill=(*text_color, 255), 
+                            stroke_width=stroke_width, stroke_fill=(*stroke_color, 255), align='center')
         
         return img
     

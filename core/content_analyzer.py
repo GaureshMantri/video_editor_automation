@@ -106,20 +106,22 @@ class ContentAnalyzer:
             if (i + 1) % 10 == 0:
                 logger.info(f"Analyzed {i+1}/{len(segments)} segments")
         
-        # Filter by importance threshold
-        filtered_results = [
-            r for r in results 
-            if r.get("needs_visualization") and r.get("importance_score", 0) >= settings.MIN_IMPORTANCE_SCORE
-        ]
+        # Sort by importance
+        results.sort(key=lambda x: x.get("importance_score", 0), reverse=True)
         
-        # Sort by importance and limit based on video duration (FIX: max 5 per 2 minutes)
-        filtered_results.sort(key=lambda x: x.get("importance_score", 0), reverse=True)
-        if len(segments) > 0:
-            video_duration = segments[-1].get("end", 120)
-            max_images = int((video_duration / 120) * settings.MAX_IMAGES_PER_2_MINUTES)
-            max_images = max(1, max_images)
-            filtered_results = filtered_results[:max_images]
+        # FIX: Take top 5 if many suggested, minimum 3 guaranteed
+        visualization_candidates = [r for r in results if r.get("needs_visualization")]
         
-        logger.info(f"Analysis complete: {len(filtered_results)} segments need visualization (limited to {max_images if len(segments) > 0 else 'N/A'})")
+        if len(visualization_candidates) >= settings.MAX_IMAGES_TOTAL:
+            # Take top 5
+            filtered_results = visualization_candidates[:settings.MAX_IMAGES_TOTAL]
+        elif len(visualization_candidates) >= settings.MIN_IMAGES_GUARANTEED:
+            # Take what we have (between 3-5)
+            filtered_results = visualization_candidates
+        else:
+            # Guarantee minimum 3 even if scores are low
+            filtered_results = results[:settings.MIN_IMAGES_GUARANTEED]
+        
+        logger.info(f"Analysis complete: {len(filtered_results)} images selected (from {len(visualization_candidates)} candidates)")
         return filtered_results
 
