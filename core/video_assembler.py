@@ -108,7 +108,7 @@ class VideoAssembler:
         logger.info("Concatenating clips with audio sync")
         final_clip = concatenate_videoclips(clips, method="compose")
         
-        # Add text overlays with sentiment-based styling
+        # Add text overlays with word-by-word animation and safe positioning
         if text_segments:
             text_clips = []
             for i, segment in enumerate(text_segments):
@@ -122,23 +122,43 @@ class VideoAssembler:
                 font_size_mod = segment['data'].get('font_size_modifier', 1.0)
                 position_vert = segment['data'].get('position_vertical', 'bottom')
                 
-                # Create text overlay with dynamic styling
-                text_img_path = self.temp_dir / f"text_{i}.png"
-                font_size = int(settings.TEXT_FONT_SIZE * font_size_mod)
-                
-                img = self.text_renderer.create_text_image(
-                    text, frame_size=video_size, 
-                    font_size=font_size, sentiment=sentiment, position_vertical=position_vert
+                # FIX: Use face detection to find safe position
+                from ..core.face_detector import FaceDetector
+                face_detector = FaceDetector()
+                safe_position = face_detector.get_best_text_position(
+                    start + duration/2,  # Middle of segment
+                    safe_zones_map,
+                    video_size
                 )
-                if img:
-                    img.save(text_img_path)
+                
+                # Create word-by-word animated text
+                words = text.split()
+                word_delay = settings.TEXT_WORD_DELAY
+                
+                for word_idx, word in enumerate(words):
+                    # Show accumulated words
+                    partial_text = ' '.join(words[:word_idx + 1])
                     
-                    # Create text clip
-                    text_clip = (ImageClip(str(text_img_path))
-                                .with_duration(duration)
-                                .with_start(start)
-                                .with_position('center'))
-                    text_clips.append(text_clip)
+                    text_img_path = self.temp_dir / f"text_{i}_word_{word_idx}.png"
+                    font_size = int(settings.TEXT_FONT_SIZE * font_size_mod)
+                    
+                    img = self.text_renderer.create_text_image(
+                        partial_text, frame_size=video_size, position=safe_position,
+                        font_size=font_size, sentiment=sentiment, position_vertical=position_vert
+                    )
+                    if img:
+                        img.save(text_img_path)
+                        
+                        # Word appears and stays until end
+                        word_start = start + (word_idx * word_delay)
+                        word_duration = duration - (word_idx * word_delay)
+                        
+                        if word_duration > 0:
+                            text_clip = (ImageClip(str(text_img_path))
+                                        .with_duration(word_duration)
+                                        .with_start(word_start)
+                                        .with_position('center'))
+                            text_clips.append(text_clip)
             
             if text_clips:
                 final_clip = CompositeVideoClip([final_clip] + text_clips)
