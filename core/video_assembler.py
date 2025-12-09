@@ -116,7 +116,7 @@ class VideoAssembler:
         logger.info("Concatenating clips with audio sync")
         final_clip = concatenate_videoclips(clips, method="compose")
         
-        # Add text overlays
+        # Add text overlays with sentiment-based styling
         if text_segments:
             text_clips = []
             for i, segment in enumerate(text_segments):
@@ -125,13 +125,29 @@ class VideoAssembler:
                 end = segment['end']
                 duration = end - start
                 
-                # Create text overlay
-                text_img_path = self.temp_dir / f"text_{i}.png"
-                position = (video_size[0] // 2, int(video_size[1] * 0.85))
-                self.text_renderer.save_text_overlay(text, text_img_path, frame_size=video_size, position=position)
+                # Get styling from segment data
+                sentiment = segment['data'].get('sentiment', 'neutral')
+                font_size_mod = segment['data'].get('font_size_modifier', 1.0)
+                position_vert = segment['data'].get('position_vertical', 'bottom')
                 
-                text_clip = ImageClip(str(text_img_path)).set_duration(duration).set_start(start).set_position('center')
-                text_clips.append(text_clip)
+                # Create text overlay with dynamic styling
+                text_img_path = self.temp_dir / f"text_{i}.png"
+                font_size = int(settings.TEXT_FONT_SIZE * font_size_mod)
+                
+                img = self.text_renderer.create_text_image(
+                    text, frame_size=video_size, 
+                    font_size=font_size, sentiment=sentiment, position_vertical=position_vert
+                )
+                if img:
+                    img.save(text_img_path)
+                    
+                    # FIX: Fade in text progressively (moviepy 2.x API)
+                    text_clip = (ImageClip(str(text_img_path))
+                                .with_duration(duration)
+                                .with_start(start)
+                                .with_position('center')
+                                .with_opacity(lambda t: min(1, t*5) if t < 0.2 else 1))
+                    text_clips.append(text_clip)
             
             if text_clips:
                 final_clip = CompositeVideoClip([final_clip] + text_clips)
