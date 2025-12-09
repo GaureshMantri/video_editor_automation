@@ -96,13 +96,9 @@ class VideoAssembler:
             image_clip = ImageClip(str(resized_path), duration=duration)
             image_clip = image_clip.with_fps(fps)
             
-            # Add fade in/out effects
+            # Add fade in/out effects using moviepy methods
             fade_duration = 0.3
-            image_clip = image_clip.with_effects([
-                lambda clip, t: clip.with_opacity(min(1, t/fade_duration)) if t < fade_duration 
-                               else clip.with_opacity(min(1, (duration-t)/fade_duration)) if t > duration-fade_duration
-                               else clip
-            ])
+            image_clip = image_clip.crossfadein(fade_duration).crossfadeout(fade_duration)
             
             clips.append(image_clip)
             current_time = segment['end']
@@ -146,7 +142,7 @@ class VideoAssembler:
                                 .with_duration(duration)
                                 .with_start(start)
                                 .with_position('center')
-                                .with_opacity(lambda t: min(1, t*5) if t < 0.2 else 1))
+                                .crossfadein(0.2))  # Fade in over 0.2 seconds
                     text_clips.append(text_clip)
             
             if text_clips:
