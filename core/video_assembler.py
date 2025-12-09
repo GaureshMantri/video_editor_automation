@@ -72,14 +72,18 @@ class VideoAssembler:
             video.close()
             return final_video
         
-        # Build clips with images replacing exact 1-second sections
+        # FIX: Extract original audio FIRST - keep it running continuously
+        original_audio = video.audio
+        logger.info("Extracted original audio - will apply continuously")
+        
+        # Build video clips with images replacing frames (no audio yet)
         clips = []
         current_time = 0
         
         for segment in image_segments:
-            # Add video before image
+            # Add video before image (without audio)
             if segment['start'] > current_time:
-                video_clip = video.subclipped(current_time, segment['start'])
+                video_clip = video.subclipped(current_time, segment['start']).with_audio(None)
                 clips.append(video_clip)
             
             # Create 1-second image clip with fade transitions
@@ -89,24 +93,27 @@ class VideoAssembler:
             # Resize image to match video
             img = Image.open(image_path)
             img_resized = img.resize((video_size[0], video_size[1]), Image.Resampling.LANCZOS)
-            resized_path = self.temp_dir / f"resized_{segment['start']}.png"
+            resized_path = self.temp_dir / f"resized_{segment['start']:.1f}.png"
             img_resized.save(resized_path, quality=95)
             
             # Create image clip
-            image_clip = ImageClip(str(resized_path), duration=duration)
-            image_clip = image_clip.with_fps(fps)
+            image_clip = ImageClip(str(resized_path), duration=duration).with_fps(fps)
             
             clips.append(image_clip)
             current_time = segment['end']
         
-        # Add remaining video
+        # Add remaining video (without audio)
         if current_time < video.duration:
-            clip = video.subclipped(current_time, video.duration)
+            clip = video.subclipped(current_time, video.duration).with_audio(None)
             clips.append(clip)
         
-        # Concatenate - THIS MAINTAINS AUDIO SYNC
-        logger.info("Concatenating clips with audio sync")
+        # Concatenate clips maintaining exact timing
+        logger.info("Concatenating clips maintaining exact timing")
         final_clip = concatenate_videoclips(clips, method="compose")
+        
+        # FIX: Apply original audio to entire video - NO INTERRUPTION  
+        logger.info("Applying continuous audio")
+        final_clip = final_clip.with_audio(original_audio)
         
         # Add text overlays with word-by-word animation and safe positioning
         if text_segments:
@@ -122,14 +129,17 @@ class VideoAssembler:
                 font_size_mod = segment['data'].get('font_size_modifier', 1.0)
                 position_vert = segment['data'].get('position_vertical', 'bottom')
                 
-                # FIX: Use face detection to find safe position
-                from ..core.face_detector import FaceDetector
-                face_detector = FaceDetector()
-                safe_position = face_detector.get_best_text_position(
-                    start + duration/2,  # Middle of segment
-                    safe_zones_map,
-                    video_size
-                )
+                # FIX: Use safe zones to avoid faces
+                timestamp = start + duration/2  # Middle of segment
+                safe_position = None
+                
+                if timestamp in safe_zones_map and safe_zones_map[timestamp]:
+                    # Use first safe zone
+                    safe_zone = safe_zones_map[timestamp][0]
+                    safe_position = (safe_zone.x + safe_zone.width // 2, safe_zone.y + safe_zone.height // 2)
+                else:
+                    # Default to bottom center
+                    safe_position = (video_size[0] // 2, int(video_size[1] * 0.75))
                 
                 # Create word-by-word animated text
                 words = text.split()

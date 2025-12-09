@@ -7,7 +7,7 @@ import json
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from video_editor_automation.core.video_assembler import VideoAssembler
+from video_editor_automation.core.video_assembler_ffmpeg import FFmpegVideoAssembler
 from video_editor_automation.utils.logger import setup_logger
 from video_editor_automation.config import settings
 
@@ -46,8 +46,8 @@ def resume_assembly(video_path: Path, timeline_json: Path, face_cache_pkl: Path)
     
     logger.info(f"Loaded timeline: {len(render_timeline)} render segments, {len(text_segments)} text segments")
     
-    # Assemble video
-    video_assembler = VideoAssembler()
+    # Assemble video using FFmpeg
+    video_assembler = FFmpegVideoAssembler()
     output_path = settings.OUTPUT_DIR / f"{video_path.stem}_edited.mp4"
     
     logger.info("Starting video assembly from cached data...")
