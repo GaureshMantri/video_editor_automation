@@ -347,3 +347,123 @@ AttributeError: 'ImageClip' object has no attribute 'set_duration'
 2025-12-10 00:03:32,073 | __main__ | INFO | log_section:29 |  Processing Complete!
 2025-12-10 00:03:32,073 | __main__ | INFO | log_section:30 | ============================================================
 2025-12-10 00:03:32,073 | __main__ | INFO | process_video:137 | Output video: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
+2025-12-10 00:16:08,479 | __main__ | INFO | __init__:22 | Video Editor Automation initialized
+2025-12-10 00:16:08,479 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:16:08,479 | __main__ | INFO | log_section:29 |  Processing Video: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-10 00:16:08,479 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:16:08,479 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:16:08,479 | __main__ | INFO | log_section:29 |  Phase 1: Audio Extraction & Translation
+2025-12-10 00:16:08,479 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:16:08,936 | video_editor_automation.core.audio_processor | INFO | __init__:25 | Audio processor initialized
+2025-12-10 00:16:08,936 | video_editor_automation.core.audio_processor | INFO | extract_audio:28 | Extracting audio from WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-10 00:16:10,412 | video_editor_automation.core.audio_processor | INFO | extract_audio:33 | Audio extracted: C:\Perforce\qa\ScalingDetector\video_editor_automation\temp\WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3
+2025-12-10 00:16:10,412 | video_editor_automation.core.audio_processor | INFO | translate_to_english:40 | Translating audio to English: WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3
+2025-12-10 00:16:19,483 | video_editor_automation.core.audio_processor | INFO | translate_to_english:57 | Translation completed
+2025-12-10 00:16:19,486 | video_editor_automation.core.audio_processor | INFO | get_phrases_from_segments:88 | Created 15 phrases from 15 segments
+2025-12-10 00:16:19,486 | __main__ | INFO | process_video:52 | Created 15 phrases for display
+2025-12-10 00:16:19,486 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:16:19,486 | __main__ | INFO | log_section:29 |  Phase 2: Content Analysis
+2025-12-10 00:16:19,486 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:16:19,861 | video_editor_automation.core.content_analyzer | INFO | __init__:23 | Content analyzer initialized
+2025-12-10 00:16:19,861 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:93 | Batch analyzing 15 segments
+2025-12-10 00:16:59,873 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:107 | Analyzed 10/15 segments
+2025-12-10 00:17:20,469 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:125 | Analysis complete: 5 images selected (from 12 candidates)
+2025-12-10 00:17:20,469 | __main__ | INFO | process_video:62 | Found 5 segments needing visualization
+2025-12-10 00:17:20,469 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:17:20,469 | __main__ | INFO | log_section:29 |  Phase 3: Face Detection & Safe Zones
+2025-12-10 00:17:20,469 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:17:20,493 | video_editor_automation.core.face_detector | INFO | __init__:26 | Face detector initialized: OpenCV Haar Cascade
+2025-12-10 00:17:20,493 | video_editor_automation.core.face_detector | INFO | process_video:70 | Processing video for face detection: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-10 00:17:23,243 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 20 frames (4.8%)
+2025-12-10 00:17:23,665 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 40 frames (9.8%)
+2025-12-10 00:17:24,095 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 60 frames (14.9%)
+2025-12-10 00:17:24,512 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 80 frames (19.9%)
+2025-12-10 00:17:24,918 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 100 frames (25.0%)
+2025-12-10 00:17:25,300 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 120 frames (30.0%)
+2025-12-10 00:17:25,665 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 140 frames (35.1%)
+2025-12-10 00:17:26,111 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 160 frames (40.1%)
+2025-12-10 00:17:26,505 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 180 frames (45.2%)
+2025-12-10 00:17:26,884 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 200 frames (50.2%)
+2025-12-10 00:17:27,243 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 220 frames (55.3%)
+2025-12-10 00:17:27,566 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 240 frames (60.3%)
+2025-12-10 00:17:27,941 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 260 frames (65.4%)
+2025-12-10 00:17:28,355 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 280 frames (70.4%)
+2025-12-10 00:17:28,769 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 300 frames (75.5%)
+2025-12-10 00:17:29,164 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 320 frames (80.5%)
+2025-12-10 00:17:29,554 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 340 frames (85.6%)
+2025-12-10 00:17:29,919 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 360 frames (90.6%)
+2025-12-10 00:17:30,275 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 380 frames (95.7%)
+2025-12-10 00:17:30,671 | video_editor_automation.core.face_detector | INFO | process_video:95 | Face detection complete: analyzed 397 frames
+2025-12-10 00:17:30,678 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:17:30,678 | __main__ | INFO | log_section:29 |  Phase 4: Image Generation
+2025-12-10 00:17:30,687 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:17:31,078 | video_editor_automation.core.image_generator | INFO | __init__:27 | Image generator initialized
+2025-12-10 00:17:31,078 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A young person sitting at a desk, surrounded by bo...
+2025-12-10 00:17:49,910 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_0.png
+2025-12-10 00:17:49,933 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A young adult sitting at a desk cluttered with acc...
+2025-12-10 00:18:18,979 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_1.png
+2025-12-10 00:18:18,998 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A young adult sitting at a desk cluttered with stu...
+2025-12-10 00:19:40,990 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_2.png
+2025-12-10 00:19:41,012 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A young adult sitting at a cluttered desk, surroun...
+2025-12-10 00:19:57,614 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_3.png
+2025-12-10 00:19:57,631 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A student sitting at a cluttered desk with books a...
+2025-12-10 00:20:17,926 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_4.png
+2025-12-10 00:20:17,948 | __main__ | INFO | process_video:98 | Generated/cached 5 images
+2025-12-10 00:20:17,948 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:20:17,948 | __main__ | INFO | log_section:29 |  Phase 5: Timeline Management
+2025-12-10 00:20:17,948 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:20:17,951 | video_editor_automation.core.timeline_manager | INFO | __init__:27 | Timeline manager initialized
+2025-12-10 00:20:41,286 | __main__ | INFO | process_video:128 | Timeline stats: {'total_segments': 20, 'text_segments': 15, 'ai_images': 5, 'custom_images': 0, 'conflicts': 0}
+2025-12-10 00:20:41,286 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-10 00:20:41,709 | video_editor_automation.core.video_assembler | INFO | __init__:24 | Video assembler initialized
+2025-12-10 00:20:42,169 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-10 00:20:42,169 | video_editor_automation.core.timeline_manager | INFO | build_render_timeline:67 | Timeline built: 25 events
+2025-12-10 00:20:42,184 | video_editor_automation.core.timeline_manager | INFO | export_timeline:75 | Timeline exported to: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_timeline.json
+2025-12-10 00:20:42,184 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-10 00:20:42,184 | __main__ | INFO | log_section:29 |  Phase 6: Final Video Assembly
+2025-12-10 00:20:42,184 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-10 00:20:42,184 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:57 | Starting final video assembly with audio sync fixes
+2025-12-10 00:20:42,728 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-10 00:20:44,317 | __main__ | ERROR | main:186 | Processing failed: 'function' object has no attribute 'copy'
+Traceback (most recent call last):
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\main.py", line 183, in main
+    output_video = cli.process_video(args.input, skip_cache=args.skip_cache)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\main.py", line 144, in process_video
+    final_video = video_assembler.assemble_final_video(video_path, render_timeline, text_segments, safe_zones_map, output_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Perforce\qa\ScalingDetector\video_editor_automation\core\video_assembler.py", line 101, in assemble_final_video
+    image_clip = image_clip.with_effects([
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gmantri\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\moviepy\Clip.py", line 204, in with_effects
+    effect_copy = effect.copy()
+                  ^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'copy'
+2025-12-10 00:23:59,114 | __main__ | INFO | resume_assembly:32 | Loaded timeline: 5 render segments, 15 text segments
+2025-12-10 00:23:59,114 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-10 00:23:59,921 | video_editor_automation.core.video_assembler | INFO | __init__:24 | Video assembler initialized
+2025-12-10 00:23:59,921 | __main__ | INFO | resume_assembly:38 | Starting video assembly from cached data...
+2025-12-10 00:23:59,921 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:57 | Starting final video assembly with audio sync fixes
+2025-12-10 00:24:00,699 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-10 00:25:43,354 | __main__ | INFO | resume_assembly:47 | Loaded timeline: 5 render segments, 15 text segments
+2025-12-10 00:25:43,354 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-10 00:25:43,997 | video_editor_automation.core.video_assembler | INFO | __init__:24 | Video assembler initialized
+2025-12-10 00:25:43,997 | __main__ | INFO | resume_assembly:53 | Starting video assembly from cached data...
+2025-12-10 00:25:43,997 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:57 | Starting final video assembly with audio sync fixes
+2025-12-10 00:25:44,675 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-10 00:26:36,334 | __main__ | INFO | resume_assembly:47 | Loaded timeline: 5 render segments, 15 text segments
+2025-12-10 00:26:36,334 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-10 00:26:36,976 | video_editor_automation.core.video_assembler | INFO | __init__:24 | Video assembler initialized
+2025-12-10 00:26:36,976 | __main__ | INFO | resume_assembly:53 | Starting video assembly from cached data...
+2025-12-10 00:26:36,976 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:57 | Starting final video assembly with audio sync fixes
+2025-12-10 00:26:37,635 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-10 00:27:59,289 | __main__ | INFO | resume_assembly:47 | Loaded timeline: 5 render segments, 15 text segments
+2025-12-10 00:27:59,290 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-10 00:27:59,963 | video_editor_automation.core.video_assembler | INFO | __init__:24 | Video assembler initialized
+2025-12-10 00:27:59,963 | __main__ | INFO | resume_assembly:53 | Starting video assembly from cached data...
+2025-12-10 00:27:59,963 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:57 | Starting final video assembly with audio sync fixes
+2025-12-10 00:28:00,656 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-10 00:28:05,913 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:108 | Concatenating clips with audio sync
+2025-12-10 00:28:07,153 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:147 | Writing final video with audio
+2025-12-10 00:31:00,298 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:160 | Video assembly complete: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
+2025-12-10 00:31:00,308 | __main__ | INFO | resume_assembly:58 | ✓ Video assembled: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4

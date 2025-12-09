@@ -6,7 +6,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "1 month left, feeling confused and unsure."
+        "text": "1 month left, feeling lost & unsure.",
+        "sentiment": "sad",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "lost",
+          "unsure"
+        ]
       }
     },
     {
@@ -15,7 +22,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Failed CA due to aggregate, considered quitting."
+        "text": "Failed CA, felt like quitting",
+        "sentiment": "sad",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "Failed",
+          "quitting"
+        ]
       }
     },
     {
@@ -24,7 +38,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Almost skipped my attempt."
+        "text": "Almost Skipped My Attempt",
+        "sentiment": "important",
+        "font_size_modifier": 1.2,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "Skipped",
+          "Attempt"
+        ]
       }
     },
     {
@@ -33,7 +54,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "30 days left, no strategy, panic mode!"
+        "text": "30 Days Left: Panicked & Strategy-less!",
+        "sentiment": "important",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "Panicked",
+          "Strategy-less"
+        ]
       }
     },
     {
@@ -42,7 +70,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Gave up hope, unprepared for exams."
+        "text": "1 month before exams,\nI gave up, unprepared.",
+        "sentiment": "sad",
+        "font_size_modifier": 1.2,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "gave up",
+          "unprepared"
+        ]
       }
     },
     {
@@ -51,7 +86,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Studied 2-3 hours, felt demotivated."
+        "text": "Demotivated: Studying 2-3 hours, barely focused",
+        "sentiment": "important",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "Demotivated",
+          "barely"
+        ]
       }
     },
     {
@@ -60,7 +102,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Out of time, mistakes were made."
+        "text": "Last month: No time, many mistakes.",
+        "sentiment": "sad",
+        "font_size_modifier": 1.2,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "No time",
+          "mistakes"
+        ]
       }
     },
     {
@@ -69,7 +118,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Worried about answering as ICI expects"
+        "text": "Worried about meeting ICI's expectations?",
+        "sentiment": "important",
+        "font_size_modifier": 1.2,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "Worried",
+          "ICI"
+        ]
       }
     },
     {
@@ -78,7 +134,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "10 years in CA journey"
+        "text": "10 Years in CA Journey",
+        "sentiment": "important",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "10 Years",
+          "CA"
+        ]
       }
     },
     {
@@ -87,7 +150,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Grateful for your support in passing the exam!"
+        "text": "Couldn't pass without you!",
+        "sentiment": "important",
+        "font_size_modifier": 1.2,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "pass",
+          "you"
+        ]
       }
     },
     {
@@ -96,7 +166,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Decision avoided another group fund attempt"
+        "text": "Decision changed my path, no extra attempt needed",
+        "sentiment": "important",
+        "font_size_modifier": 1.2,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "Decision",
+          "changed"
+        ]
       }
     },
     {
@@ -105,7 +182,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Boosted confidence to ace CA in one month!"
+        "text": "Boosted confidence: CA in 1 month!",
+        "sentiment": "excited",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "confidence",
+          "CA"
+        ]
       }
     },
     {
@@ -114,7 +198,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "Studied 14 hours after your workshop!"
+        "text": "After your workshop, \nstudied 14 hours straight!",
+        "sentiment": "important",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "workshop",
+          "14 hours"
+        ]
       }
     },
     {
@@ -123,7 +214,14 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "30 days to create magic"
+        "text": "30 Days to Make Magic",
+        "sentiment": "excited",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "30 Days",
+          "Magic"
+        ]
       }
     },
     {
@@ -132,7 +230,114 @@
       "type": "text",
       "priority": 10,
       "data": {
-        "text": "With Rucha ma'am, become a CA!"
+        "text": "With Rucha ma'am,\nbecome a CA!",
+        "sentiment": "important",
+        "font_size_modifier": 1.3,
+        "position_vertical": "middle",
+        "emphasis_words": [
+          "Rucha ma'am",
+          "CA"
+        ]
+      }
+    },
+    {
+      "start_time": 0.0,
+      "end_time": 1.0,
+      "type": "ai_image",
+      "priority": 50,
+      "data": {
+        "image_path": "C:\\Perforce\\qa\\ScalingDetector\\video_editor_automation\\cache\\images\\50c11adc725ab2ca2aa93fa61af22f6c.png",
+        "analysis": {
+          "needs_visualization": true,
+          "importance_score": 7,
+          "reasoning": "The segment describes a personal emotional struggle and a critical moment in the speaker's journey. Visualizing this can enhance the viewer's understanding of the speaker's emotional state and the gravity of the situation.",
+          "image_prompt": "A young person sitting at a desk, surrounded by books and papers, looking stressed and overwhelmed. The room is dimly lit, reflecting a somber mood, with a calendar on the wall showing only one month left. The person's expression should convey confusion and depression.",
+          "image_description": "The image should show a young person at a desk, appearing stressed and overwhelmed, with books and papers scattered around. The room should have a dim lighting to match the somber mood, and a calendar on the wall should indicate that only one month is left. The person's facial expression should clearly show confusion and depression.",
+          "segment_id": 0,
+          "start_time": 0.0,
+          "end_time": 6.0,
+          "original_text": " Just a month was left and I was so confused and depressed that I was not sure if I would be able to complete this journey in a month."
+        }
+      }
+    },
+    {
+      "start_time": 6.0,
+      "end_time": 7.0,
+      "type": "ai_image",
+      "priority": 50,
+      "data": {
+        "image_path": "C:\\Perforce\\qa\\ScalingDetector\\video_editor_automation\\cache\\images\\da5ae92ee834b59c4345a8a7c06ec18c.png",
+        "analysis": {
+          "needs_visualization": true,
+          "importance_score": 7,
+          "reasoning": "The segment describes a moment of personal crisis and contemplation of quitting a significant career path, which can be visually represented to enhance emotional engagement and understanding.",
+          "image_prompt": "A young adult sitting at a desk cluttered with accounting books and papers, looking frustrated and contemplative. The room is dimly lit, suggesting a late night of studying. The person's expression shows disappointment and contemplation, as if they are considering giving up.",
+          "image_description": "A young adult at a desk with accounting materials, looking frustrated and contemplative, in a dimly lit room.",
+          "segment_id": 1,
+          "start_time": 6.0,
+          "end_time": 12.0,
+          "original_text": " Failed due to aggregate. I was totally fed up and disappointed and I even thought of quitting my CA."
+        }
+      }
+    },
+    {
+      "start_time": 12.0,
+      "end_time": 13.0,
+      "type": "ai_image",
+      "priority": 50,
+      "data": {
+        "image_path": "C:\\Perforce\\qa\\ScalingDetector\\video_editor_automation\\cache\\images\\8c6537222ae22c4ab1be240a79071214.png",
+        "analysis": {
+          "needs_visualization": true,
+          "importance_score": 7,
+          "reasoning": "The segment describes a critical moment of decision-making and emotional turmoil. Visualizing this can help convey the gravity of the situation and the internal struggle faced by the speaker.",
+          "image_prompt": "A young adult sitting at a desk cluttered with study materials, looking overwhelmed and contemplative, with a calendar on the wall showing only a few days left until an important exam. The room is dimly lit, emphasizing a sense of isolation and pressure.",
+          "image_description": "The image should show a young adult at a desk, surrounded by books and notes, appearing overwhelmed and lost in thought. A calendar on the wall should highlight the urgency of the situation with the exam date approaching. The lighting should be dim to reflect the mood of stress and contemplation.",
+          "segment_id": 2,
+          "start_time": 12.0,
+          "end_time": 14.0,
+          "original_text": " I was about to skip my attempt."
+        }
+      }
+    },
+    {
+      "start_time": 14.0,
+      "end_time": 15.0,
+      "type": "ai_image",
+      "priority": 50,
+      "data": {
+        "image_path": "C:\\Perforce\\qa\\ScalingDetector\\video_editor_automation\\cache\\images\\b29ff62c91a55f797e6327a16ab41948.png",
+        "analysis": {
+          "needs_visualization": true,
+          "importance_score": 7,
+          "reasoning": "The segment describes a concrete situation of panic and lack of strategy during exam preparation, which can be visually represented to enhance the emotional impact and understanding of the viewer.",
+          "image_prompt": "A young adult sitting at a cluttered desk, surrounded by books and papers, looking stressed and anxious. The room is dimly lit, and a calendar on the wall shows the last 30 days leading up to an exam. The person has a worried expression, with their head in their hands, symbolizing panic and lack of direction.",
+          "image_description": "A stressed student at a cluttered desk with a calendar showing 30 days to an exam, conveying panic and lack of strategy.",
+          "segment_id": 3,
+          "start_time": 14.0,
+          "end_time": 22.0,
+          "original_text": " When the last 30 days of the exam were left, I was in a panic situation and very scared because I did not have any clear strategy to move forward."
+        }
+      }
+    },
+    {
+      "start_time": 22.0,
+      "end_time": 23.0,
+      "type": "ai_image",
+      "priority": 50,
+      "data": {
+        "image_path": "C:\\Perforce\\qa\\ScalingDetector\\video_editor_automation\\cache\\images\\4578608da98fba85396238371fed9653.png",
+        "analysis": {
+          "needs_visualization": true,
+          "importance_score": 7,
+          "reasoning": "The segment describes a concrete and relatable situation of feeling unprepared and overwhelmed before exams, which many viewers can empathize with. Visualizing this can enhance the emotional impact and understanding of the speaker's state of mind.",
+          "image_prompt": "A student sitting at a cluttered desk with books and papers scattered everywhere, looking stressed and overwhelmed. The room is dimly lit, and the student has a worried expression, with a calendar on the wall showing the last month before exams.",
+          "image_description": "The image should show a student at a messy desk, appearing stressed and overwhelmed, with a calendar indicating the last month before exams.",
+          "segment_id": 4,
+          "start_time": 22.0,
+          "end_time": 31.0,
+          "original_text": " One month before exams, I was not even prepared for a single subject and I totally gave up and lost hopes that okay, this is not going to be my attempt."
+        }
       }
     }
   ]

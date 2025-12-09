@@ -77,9 +77,9 @@ class VideoAssembler:
         current_time = 0
         
         for segment in image_segments:
-            # Add video before image with crossfade
+            # Add video before image
             if segment['start'] > current_time:
-                video_clip = video.subclip(current_time, segment['start'])
+                video_clip = video.subclipped(current_time, segment['start'])
                 clips.append(video_clip)
             
             # Create 1-second image clip with fade transitions
@@ -92,20 +92,16 @@ class VideoAssembler:
             resized_path = self.temp_dir / f"resized_{segment['start']}.png"
             img_resized.save(resized_path, quality=95)
             
-            # Create image clip with fade in/out transitions
+            # Create image clip
             image_clip = ImageClip(str(resized_path), duration=duration)
             image_clip = image_clip.with_fps(fps)
-            
-            # Add fade in/out effects using moviepy methods
-            fade_duration = 0.3
-            image_clip = image_clip.crossfadein(fade_duration).crossfadeout(fade_duration)
             
             clips.append(image_clip)
             current_time = segment['end']
         
         # Add remaining video
         if current_time < video.duration:
-            clip = video.subclip(current_time, video.duration)
+            clip = video.subclipped(current_time, video.duration)
             clips.append(clip)
         
         # Concatenate - THIS MAINTAINS AUDIO SYNC
@@ -137,12 +133,11 @@ class VideoAssembler:
                 if img:
                     img.save(text_img_path)
                     
-                    # FIX: Fade in text progressively (moviepy 2.x API)
+                    # Create text clip
                     text_clip = (ImageClip(str(text_img_path))
                                 .with_duration(duration)
                                 .with_start(start)
-                                .with_position('center')
-                                .crossfadein(0.2))  # Fade in over 0.2 seconds
+                                .with_position('center'))
                     text_clips.append(text_clip)
             
             if text_clips:
