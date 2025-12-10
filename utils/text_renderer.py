@@ -34,7 +34,8 @@ class TextRenderer:
     def create_text_image(self, text: str, frame_size: Tuple[int, int], position: Tuple[int, int] = None,
                          font_size: int = None, text_color: Tuple[int, int, int] = None,
                          stroke_color: Tuple[int, int, int] = None, stroke_width: int = None,
-                         sentiment: str = "neutral", position_vertical: str = "bottom") -> Image:
+                         sentiment: str = "neutral", position_vertical: str = "bottom",
+                         add_background: bool = True) -> Image:
         width, height = frame_size
         font_size = font_size or settings.TEXT_FONT_SIZE
         
@@ -71,15 +72,41 @@ class TextRenderer:
         text_width = bbox[2] - bbox[0]
         text_height = bbox[3] - bbox[1]
         
+        # FIX: Ensure text stays within frame boundaries (strict)
         x = position[0] - text_width // 2
         y = position[1] - text_height // 2
         
-        if settings.TEXT_BACKGROUND_OPACITY > 0:
-            padding = 20
-            bg_opacity = int(255 * settings.TEXT_BACKGROUND_OPACITY)
-            draw.rectangle([(x - padding, y - padding), (x + text_width + padding, y + text_height + padding)],
-                         fill=(0, 0, 0, bg_opacity))
+        # Clamp to safe boundaries (5% margin from edges)
+        margin = int(width * 0.05)
+        x = max(margin, min(x, width - text_width - margin))
+        y = max(margin, min(y, height - text_height - margin))
         
+        # FIX: Draw emotion-based background FIRST
+        if add_background and sentiment != "neutral":
+            padding = 15
+            bg_opacity = 180
+            
+            # Choose color based on sentiment
+            if sentiment in ["sad", "angry", "worried"]:
+                bg_color = (200, 50, 50, bg_opacity)  # Red for negative
+            elif sentiment in ["happy", "excited", "important", "grateful"]:
+                bg_color = (50, 180, 50, bg_opacity)  # Green for positive
+            else:
+                bg_color = (40, 40, 40, bg_opacity)  # Dark grey fallback
+            
+            draw.rounded_rectangle(
+                [(x - padding, y - padding), (x + text_width + padding, y + text_height + padding)],
+                fill=bg_color,
+                radius=10
+            )
+        
+        # Draw text shadow
+        if settings.TEXT_SHADOW:
+            shadow_x = x + settings.TEXT_SHADOW_OFFSET[0]
+            shadow_y = y + settings.TEXT_SHADOW_OFFSET[1]
+            draw.multiline_text((shadow_x, shadow_y), wrapped_text, font=font, fill=(0, 0, 0, 180), align='center')
+        
+        # Draw text on top
         draw.multiline_text((x, y), wrapped_text, font=font, fill=(*text_color, 255), 
                             stroke_width=stroke_width, stroke_fill=(*stroke_color, 255), align='center')
         

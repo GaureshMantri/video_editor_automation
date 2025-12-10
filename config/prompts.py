@@ -47,12 +47,15 @@ Guidelines:
 - Use sentence case or title case
 - 1-2 short lines maximum
 
-Also analyze the sentiment:
+Also analyze the sentiment (this determines background color):
+- sad/angry/worried = RED background
+- happy/excited/grateful/important = GREEN background  
+- neutral = NO background
 
 Respond in JSON format:
 {{
     "english_text": "Key message or emotion (NOT subtitles)",
-    "sentiment": "important/happy/sad/angry/neutral/excited",
+    "sentiment": "important/happy/sad/angry/neutral/excited/grateful/worried",
     "font_size_modifier": 1.0-1.5,
     "emphasis_words": ["word1", "word2"],
     "text_position": "bottom"

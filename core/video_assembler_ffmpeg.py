@@ -223,11 +223,12 @@ class FFmpegVideoAssembler:
                         # FIX: Use pre-calculated fixed position for entire segment
                         safe_position = segment_positions[id(segment)]
                         
-                        # Create text overlay
+                        # Create text overlay with emotion-based background
                         font_size = int(settings.TEXT_FONT_SIZE * font_size_mod)
+                        add_bg = sentiment != "neutral"  # No background for neutral
                         text_img = text_renderer.create_text_image(
                             partial_text, (width, height), safe_position,
-                            font_size=font_size, sentiment=sentiment
+                            font_size=font_size, sentiment=sentiment, add_background=add_bg
                         )
                         
                         if text_img:
