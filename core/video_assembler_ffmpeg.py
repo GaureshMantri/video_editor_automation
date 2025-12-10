@@ -197,19 +197,28 @@ class FFmpegVideoAssembler:
                     sentiment = segment['data'].get('sentiment', 'neutral')
                     font_size_mod = segment['data'].get('font_size_modifier', 1.0)
                     
-                    # Calculate which word pair to show (2 words at a time)
+                    # FIX: Build up text cumulatively (2 words at a time, keeping previous)
                     time_in_segment = current_time - segment['start']
                     words = text.split()
                     word_delay = settings.TEXT_WORD_DELAY
                     words_per_chunk = settings.TEXT_WORDS_PER_CHUNK
                     
-                    # Calculate which chunk (pair) of words to show
+                    # Calculate how many words to show (cumulative)
                     current_chunk = int(time_in_segment / word_delay)
-                    start_idx = current_chunk * words_per_chunk
-                    end_idx = min(len(words), start_idx + words_per_chunk)
+                    total_words_to_show = min(len(words), (current_chunk + 1) * words_per_chunk)
                     
-                    if start_idx < len(words):
-                        partial_text = ' '.join(words[start_idx:end_idx])
+                    if total_words_to_show > 0:
+                        # Build staggered multi-line text with indentation
+                        visible_words = words[:total_words_to_show]
+                        
+                        # Create staggered lines (2 words per line with increasing indent)
+                        lines = []
+                        for i in range(0, len(visible_words), words_per_chunk):
+                            line_words = visible_words[i:i+words_per_chunk]
+                            indent = "    " * (i // words_per_chunk)  # Add indent for each line
+                            lines.append(indent + ' '.join(line_words))
+                        
+                        partial_text = '\n'.join(lines)
                         
                         # FIX: Use pre-calculated fixed position for entire segment
                         safe_position = segment_positions[id(segment)]
@@ -252,10 +261,10 @@ class FFmpegVideoAssembler:
     
     def _get_safe_position(self, timestamp: float, safe_zones_map: Dict, 
                           frame_size: Tuple[int, int]) -> Tuple[int, int]:
-        """Get safe position - always bottom center for captions"""
-        # FIX: Always use bottom center for caption-style text
-        # This ensures consistent positioning like professional captions
-        return (frame_size[0] // 2, int(frame_size[1] * 0.85))
+        """Get safe position - bottom area, avoiding faces"""
+        # FIX: Use bottom 20% of frame for text, centered
+        # This ensures text stays below faces even with multi-line staggered layout
+        return (frame_size[0] // 2, int(frame_size[1] * 0.82))
     
     def assemble_final_video(self, original_video: Path, timeline: List[Dict],
                             text_segments: List[Dict], safe_zones_map: Dict,
