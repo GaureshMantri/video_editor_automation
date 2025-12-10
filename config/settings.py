@@ -22,19 +22,19 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 MIN_IMPORTANCE_SCORE = 6  # Lower threshold, we'll select top ones
 MAX_IMAGES_TOTAL = 5  # Take top 5 images
 MIN_IMAGES_GUARANTEED = 3  # Minimum 3 images even if low scores
-IMAGE_DISPLAY_DURATION = 1.0  # Each image displays for exactly 1 second
+IMAGE_DISPLAY_DURATION = 2.0  # Each image displays for exactly 2 seconds
 CONTEXT_WINDOW_SECONDS = 30
 MAX_TEXT_LENGTH = 60
 
 # Text Display Settings
-TEXT_FONT_SIZE = 44  # Optimized for phone/reels format
+TEXT_FONT_SIZE = 42  # Optimized for phone/reels format
 TEXT_STROKE_WIDTH = 3  # Stroke for better visibility
 TEXT_SHADOW = True
 TEXT_SHADOW_OFFSET = (2, 2)
 TEXT_BACKGROUND_OPACITY = 0.8
 TEXT_ANIMATION = "word_by_word"  # Animate text appearance
-TEXT_WORD_DELAY = 0.15  # Seconds between words appearing
-TEXT_MAX_WORDS_VISIBLE = 4  # Max words visible at once (rolling window)
+TEXT_WORD_DELAY = 0.35  # Seconds between words appearing (slower, smoother)
+TEXT_MAX_WORDS_VISIBLE = 6  # Max words visible at once (rolling window)
 
 # Sentiment-based colors (RGB)
 SENTIMENT_COLORS = {

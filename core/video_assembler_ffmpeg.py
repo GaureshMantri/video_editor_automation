@@ -243,7 +243,7 @@ class FFmpegVideoAssembler:
     
     def _get_safe_position(self, timestamp: float, safe_zones_map: Dict, 
                           frame_size: Tuple[int, int]) -> Tuple[int, int]:
-        """Get safe position avoiding faces"""
+        """Get safe position avoiding faces, ensuring text stays in frame"""
         # Find closest timestamp in safe zones
         closest_time = min(safe_zones_map.keys(), 
                           key=lambda t: abs(t - timestamp),
@@ -251,10 +251,13 @@ class FFmpegVideoAssembler:
         
         if closest_time and safe_zones_map[closest_time]:
             zone = safe_zones_map[closest_time][0]
-            return (zone.x + zone.width // 2, zone.y + zone.height // 2)
+            # Use zone position but ensure it's not too close to edges
+            x = max(frame_size[0] // 4, min(zone.x + zone.width // 2, 3 * frame_size[0] // 4))
+            y = max(int(frame_size[1] * 0.20), min(zone.y + zone.height // 2, int(frame_size[1] * 0.85)))
+            return (x, y)
         
-        # Default: bottom center
-        return (frame_size[0] // 2, int(frame_size[1] * 0.75))
+        # Default: bottom center with safe margin
+        return (frame_size[0] // 2, int(frame_size[1] * 0.70))
     
     def assemble_final_video(self, original_video: Path, timeline: List[Dict],
                             text_segments: List[Dict], safe_zones_map: Dict,

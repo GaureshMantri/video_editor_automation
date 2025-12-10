@@ -62,17 +62,17 @@ class TextRenderer:
         # FIX: Position for portrait/reels format - avoid top/bottom cut-off
         if position is None:
             if position_vertical == "top":
-                position = (width // 2, int(height * settings.TEXT_POSITION_TOP))
+                position = (width // 2, int(height * 0.20))  # 20% from top
             elif position_vertical == "middle":
-                position = (width // 2, int(height * settings.TEXT_POSITION_MIDDLE))
+                position = (width // 2, int(height * 0.50))  # Middle
             else:  # bottom
-                position = (width // 2, int(height * settings.TEXT_POSITION_BOTTOM))
+                position = (width // 2, int(height * 0.70))  # 70% from top (safer)
         
         # FIX: Wrap text to multiple lines for better readability
         words = text.split()
         lines = []
         current_line = []
-        max_width = int(width * 0.85)  # Use 85% of width to avoid cutoff
+        max_width = int(width * 0.80)  # Use 80% of width to avoid cutoff (more conservative)
         
         for word in words:
             test_line = ' '.join(current_line + [word])

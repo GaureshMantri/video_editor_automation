@@ -531,3 +531,44 @@ AttributeError: 'function' object has no attribute 'copy'
 2025-12-10 00:41:45,044 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:206 | Processed 1900/1979 frames (96%)
 2025-12-10 00:41:55,644 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:306 | ✓ Final video assembled: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
 2025-12-10 00:41:55,644 | __main__ | INFO | resume_assembly:58 | ✓ Video assembled: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
+2025-12-11 00:26:00,663 | __main__ | INFO | resume_assembly:47 | Loaded timeline: 5 render segments, 15 text segments
+2025-12-11 00:26:00,664 | video_editor_automation.core.video_assembler_ffmpeg | INFO | __init__:21 | FFmpeg video assembler initialized
+2025-12-11 00:26:00,665 | __main__ | INFO | resume_assembly:53 | Starting video assembly from cached data...
+2025-12-11 00:26:00,665 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:263 | Starting FFmpeg-based video assembly
+2025-12-11 00:26:02,941 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:273 | Extracted original audio
+2025-12-11 00:26:02,941 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:297 | Creating image segment 0.0s - 1.0s with fade transition
+2025-12-11 00:26:04,107 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:287 | Creating video segment 1.0s - 6.0s
+2025-12-11 00:26:04,961 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:297 | Creating image segment 6.0s - 7.0s with zoom transition
+2025-12-11 00:26:05,781 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:287 | Creating video segment 7.0s - 12.0s
+2025-12-11 00:26:06,674 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:297 | Creating image segment 12.0s - 13.0s with slide_left transition
+2025-12-11 00:26:07,566 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:287 | Creating video segment 13.0s - 14.0s
+2025-12-11 00:26:08,219 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:297 | Creating image segment 14.0s - 15.0s with slide_right transition
+2025-12-11 00:26:09,045 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:287 | Creating video segment 15.0s - 22.0s
+2025-12-11 00:26:09,919 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:297 | Creating image segment 22.0s - 23.0s with wipe transition
+2025-12-11 00:26:10,577 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:309 | Creating final video segment 23.0s - 82.5s
+2025-12-11 00:26:14,703 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:318 | Concatenating video segments
+2025-12-11 00:26:15,297 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:323 | Adding continuous audio
+2025-12-11 00:26:17,676 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:328 | Rendering word-by-word text overlays
+2025-12-11 00:26:17,690 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-11 00:26:17,765 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:175 | Rendering word-by-word text on 1979 frames
+2025-12-11 00:26:19,343 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 100/1979 frames (5%)
+2025-12-11 00:26:20,601 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 200/1979 frames (10%)
+2025-12-11 00:26:21,324 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 300/1979 frames (15%)
+2025-12-11 00:26:23,305 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 400/1979 frames (20%)
+2025-12-11 00:26:23,588 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 500/1979 frames (25%)
+2025-12-11 00:26:25,060 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 600/1979 frames (30%)
+2025-12-11 00:26:25,351 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 700/1979 frames (35%)
+2025-12-11 00:26:26,584 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 800/1979 frames (40%)
+2025-12-11 00:26:27,217 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 900/1979 frames (45%)
+2025-12-11 00:26:28,004 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1000/1979 frames (50%)
+2025-12-11 00:26:28,992 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1100/1979 frames (55%)
+2025-12-11 00:26:29,932 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1200/1979 frames (60%)
+2025-12-11 00:26:30,899 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1300/1979 frames (65%)
+2025-12-11 00:26:32,209 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1400/1979 frames (70%)
+2025-12-11 00:26:32,791 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1500/1979 frames (75%)
+2025-12-11 00:26:33,563 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1600/1979 frames (80%)
+2025-12-11 00:26:34,878 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1700/1979 frames (85%)
+2025-12-11 00:26:35,880 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1800/1979 frames (90%)
+2025-12-11 00:26:36,894 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:229 | Processed 1900/1979 frames (96%)
+2025-12-11 00:26:43,672 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:331 | ✓ Final video assembled: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
+2025-12-11 00:26:43,672 | __main__ | INFO | resume_assembly:58 | ✓ Video assembled: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
