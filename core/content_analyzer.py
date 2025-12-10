@@ -122,6 +122,9 @@ class ContentAnalyzer:
             # Guarantee minimum 3 even if scores are low
             filtered_results = results[:settings.MIN_IMAGES_GUARANTEED]
         
+        # FIX: Ensure no images start at timestamp 0 (video should always start with original footage)
+        filtered_results = [r for r in filtered_results if r.get("start_time", 0) > 0.5]
+        
         logger.info(f"Analysis complete: {len(filtered_results)} images selected (from {len(visualization_candidates)} candidates)")
         return filtered_results
 

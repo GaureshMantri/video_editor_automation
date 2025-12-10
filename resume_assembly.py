@@ -39,6 +39,11 @@ def resume_assembly(video_path: Path, timeline_json: Path, face_cache_pkl: Path)
             'data': seg['data']
         }
         
+        # FIX: Skip images at timestamp 0 (video should always start with original video)
+        if seg['type'] in ['ai_image', 'custom_image'] and seg['start_time'] == 0.0:
+            logger.info(f"Skipping image at timestamp 0 - video should start with original footage")
+            continue
+        
         # FIX: Extend image segments from 1 second to 2 seconds
         if seg['type'] in ['ai_image', 'custom_image']:
             duration = converted_seg['end'] - converted_seg['start']

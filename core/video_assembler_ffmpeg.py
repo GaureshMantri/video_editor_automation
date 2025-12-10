@@ -165,6 +165,15 @@ class FFmpegVideoAssembler:
         height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         
+        # FIX: Pre-calculate fixed position for each text segment (avoid jumping)
+        segment_positions = {}
+        for segment in text_segments:
+            segment_id = id(segment)
+            # Use middle of segment for position calculation
+            mid_time = (segment['start'] + segment['end']) / 2
+            segment_positions[segment_id] = self._get_safe_position(mid_time, safe_zones_map, (width, height))
+            logger.debug(f"Text segment {segment['start']:.1f}-{segment['end']:.1f}: fixed position {segment_positions[segment_id]}")
+        
         # Create writer
         fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         temp_output = self.temp_dir / f"temp_text_{output_path.name}"
@@ -194,7 +203,7 @@ class FFmpegVideoAssembler:
                     word_delay = settings.TEXT_WORD_DELAY
                     current_word_idx = int(time_in_segment / word_delay)
                     
-                    # Show max 3-4 words at a time (rolling window)
+                    # Show max words at a time (rolling window)
                     max_visible = settings.TEXT_MAX_WORDS_VISIBLE
                     start_idx = max(0, current_word_idx - max_visible + 1)
                     end_idx = min(len(words), current_word_idx + 1)
@@ -202,8 +211,8 @@ class FFmpegVideoAssembler:
                     if end_idx > start_idx:
                         partial_text = ' '.join(words[start_idx:end_idx])
                         
-                        # Get safe position
-                        safe_position = self._get_safe_position(current_time, safe_zones_map, (width, height))
+                        # FIX: Use pre-calculated fixed position for entire segment
+                        safe_position = segment_positions[id(segment)]
                         
                         # Create text overlay
                         font_size = int(settings.TEXT_FONT_SIZE * font_size_mod)
