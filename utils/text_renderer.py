@@ -39,8 +39,8 @@ class TextRenderer:
         width, height = frame_size
         font_size = font_size or settings.TEXT_FONT_SIZE
         
-        # FIX: Use sentiment-based color
-        text_color = text_color or settings.SENTIMENT_COLORS.get(sentiment, settings.SENTIMENT_COLORS["neutral"])
+        # FIX: Always use white text color (sentiment only affects background)
+        text_color = (255, 255, 255)  # Always white
         stroke_color = (0, 0, 0)  # Always black stroke for readability
         stroke_width = stroke_width or settings.TEXT_STROKE_WIDTH
         

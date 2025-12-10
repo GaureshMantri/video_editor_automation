@@ -732,3 +732,89 @@ AttributeError: 'function' object has no attribute 'copy'
 2025-12-11 00:56:03,930 | video_editor_automation.core.video_assembler_ffmpeg | INFO | render_text_on_frames:247 | Processed 1900/1979 frames (96%)
 2025-12-11 00:56:11,957 | video_editor_automation.core.video_assembler_ffmpeg | INFO | assemble_final_video:341 | ✓ Final video assembled: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
 2025-12-11 00:56:11,957 | __main__ | INFO | resume_assembly:69 | ✓ Video assembled: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
+2025-12-11 01:00:45,196 | __main__ | INFO | __init__:22 | Video Editor Automation initialized
+2025-12-11 01:00:45,196 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-11 01:00:45,196 | __main__ | INFO | log_section:29 |  Processing Video: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-11 01:00:45,196 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-11 01:00:45,196 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-11 01:00:45,197 | __main__ | INFO | log_section:29 |  Phase 1: Audio Extraction & Translation
+2025-12-11 01:00:45,197 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-11 01:00:46,651 | video_editor_automation.core.audio_processor | INFO | __init__:25 | Audio processor initialized
+2025-12-11 01:00:46,651 | video_editor_automation.core.audio_processor | INFO | extract_audio:28 | Extracting audio from WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-11 01:00:47,900 | video_editor_automation.core.audio_processor | INFO | extract_audio:33 | Audio extracted: C:\Perforce\qa\ScalingDetector\video_editor_automation\temp\WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3
+2025-12-11 01:00:47,900 | video_editor_automation.core.audio_processor | INFO | translate_to_english:40 | Translating audio to English: WhatsApp Video 2025-12-06 at 22.53.28_audio.mp3
+2025-12-11 01:00:59,973 | video_editor_automation.core.audio_processor | INFO | translate_to_english:57 | Translation completed
+2025-12-11 01:00:59,973 | video_editor_automation.core.audio_processor | INFO | get_phrases_from_segments:88 | Created 15 phrases from 15 segments
+2025-12-11 01:00:59,973 | __main__ | INFO | process_video:52 | Created 15 phrases for display
+2025-12-11 01:00:59,973 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-11 01:00:59,973 | __main__ | INFO | log_section:29 |  Phase 2: Content Analysis
+2025-12-11 01:00:59,973 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-11 01:01:00,323 | video_editor_automation.core.content_analyzer | INFO | __init__:23 | Content analyzer initialized
+2025-12-11 01:01:00,323 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:93 | Batch analyzing 15 segments
+2025-12-11 01:01:47,643 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:107 | Analyzed 10/15 segments
+2025-12-11 01:02:05,431 | video_editor_automation.core.content_analyzer | INFO | batch_analyze_segments:128 | Analysis complete: 5 images selected (from 13 candidates)
+2025-12-11 01:02:05,432 | __main__ | INFO | process_video:62 | Found 5 segments needing visualization
+2025-12-11 01:02:05,433 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-11 01:02:05,434 | __main__ | INFO | log_section:29 |  Phase 3: Face Detection & Safe Zones
+2025-12-11 01:02:05,434 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-11 01:02:05,486 | video_editor_automation.core.face_detector | INFO | __init__:26 | Face detector initialized: OpenCV Haar Cascade
+2025-12-11 01:02:05,486 | video_editor_automation.core.face_detector | INFO | process_video:70 | Processing video for face detection: WhatsApp Video 2025-12-06 at 22.53.28.mp4
+2025-12-11 01:02:08,546 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 20 frames (4.8%)
+2025-12-11 01:02:08,946 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 40 frames (9.8%)
+2025-12-11 01:02:09,362 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 60 frames (14.9%)
+2025-12-11 01:02:09,730 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 80 frames (19.9%)
+2025-12-11 01:02:10,078 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 100 frames (25.0%)
+2025-12-11 01:02:10,415 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 120 frames (30.0%)
+2025-12-11 01:02:10,765 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 140 frames (35.1%)
+2025-12-11 01:02:11,115 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 160 frames (40.1%)
+2025-12-11 01:02:11,478 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 180 frames (45.2%)
+2025-12-11 01:02:11,828 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 200 frames (50.2%)
+2025-12-11 01:02:12,131 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 220 frames (55.3%)
+2025-12-11 01:02:12,410 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 240 frames (60.3%)
+2025-12-11 01:02:12,760 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 260 frames (65.4%)
+2025-12-11 01:02:13,110 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 280 frames (70.4%)
+2025-12-11 01:02:13,460 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 300 frames (75.5%)
+2025-12-11 01:02:13,827 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 320 frames (80.5%)
+2025-12-11 01:02:14,209 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 340 frames (85.6%)
+2025-12-11 01:02:14,546 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 360 frames (90.6%)
+2025-12-11 01:02:14,880 | video_editor_automation.core.face_detector | INFO | process_video:91 | Processed 380 frames (95.7%)
+2025-12-11 01:02:15,263 | video_editor_automation.core.face_detector | INFO | process_video:95 | Face detection complete: analyzed 397 frames
+2025-12-11 01:02:15,286 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-11 01:02:15,287 | __main__ | INFO | log_section:29 |  Phase 4: Image Generation
+2025-12-11 01:02:15,288 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-11 01:02:15,657 | video_editor_automation.core.image_generator | INFO | __init__:27 | Image generator initialized
+2025-12-11 01:02:15,657 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A young adult sitting at a desk cluttered with acc...
+2025-12-11 01:02:32,387 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_1.png
+2025-12-11 01:02:32,416 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A young adult sitting at a desk cluttered with stu...
+2025-12-11 01:02:54,370 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_2.png
+2025-12-11 01:02:54,385 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A young adult sitting at a cluttered desk in a dim...
+2025-12-11 01:03:13,082 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_3.png
+2025-12-11 01:03:13,109 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A student sitting at a cluttered desk with books a...
+2025-12-11 01:04:39,849 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_4.png
+2025-12-11 01:04:39,866 | video_editor_automation.core.image_generator | INFO | generate_image:32 | Generating image: A young adult holding a certificate or diploma, lo...
+2025-12-11 01:04:55,927 | video_editor_automation.core.image_generator | INFO | generate_image:51 | Image generated successfully: segment_9.png
+2025-12-11 01:04:55,945 | __main__ | INFO | process_video:98 | Generated/cached 5 images
+2025-12-11 01:04:55,945 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-11 01:04:55,945 | __main__ | INFO | log_section:29 |  Phase 5: Timeline Management
+2025-12-11 01:04:55,946 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-11 01:04:55,946 | video_editor_automation.core.timeline_manager | INFO | __init__:27 | Timeline manager initialized
+2025-12-11 01:05:17,460 | __main__ | INFO | process_video:128 | Timeline stats: {'total_segments': 20, 'text_segments': 15, 'ai_images': 5, 'custom_images': 0, 'conflicts': 0}
+2025-12-11 01:05:17,460 | video_editor_automation.utils.text_renderer | INFO | __init__:20 | Text renderer initialized with font: C:\Windows\Fonts\arial.ttf
+2025-12-11 01:05:17,909 | video_editor_automation.core.video_assembler | INFO | __init__:24 | Video assembler initialized
+2025-12-11 01:05:18,326 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-11 01:05:18,326 | video_editor_automation.core.timeline_manager | INFO | build_render_timeline:67 | Timeline built: 25 events
+2025-12-11 01:05:18,326 | video_editor_automation.core.timeline_manager | INFO | export_timeline:75 | Timeline exported to: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_timeline.json
+2025-12-11 01:05:18,326 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-11 01:05:18,326 | __main__ | INFO | log_section:29 |  Phase 6: Final Video Assembly
+2025-12-11 01:05:18,326 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-11 01:05:18,326 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:57 | Starting final video assembly with audio sync fixes
+2025-12-11 01:05:18,759 | video_editor_automation.core.video_assembler | INFO | get_video_info:48 | Video info: 480x848 @ 24.0fps, duration: 82.54s
+2025-12-11 01:05:19,728 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:77 | Extracted original audio - will apply continuously
+2025-12-11 01:05:22,192 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:111 | Concatenating clips maintaining exact timing
+2025-12-11 01:05:22,221 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:115 | Applying continuous audio
+2025-12-11 01:05:25,853 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:177 | Writing final video with audio
+2025-12-11 01:07:18,242 | video_editor_automation.core.video_assembler | INFO | assemble_final_video:190 | Video assembly complete: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4
+2025-12-11 01:07:18,242 | __main__ | INFO | log_section:28 | ============================================================
+2025-12-11 01:07:18,242 | __main__ | INFO | log_section:29 |  Processing Complete!
+2025-12-11 01:07:18,242 | __main__ | INFO | log_section:30 | ============================================================
+2025-12-11 01:07:18,242 | __main__ | INFO | process_video:147 | Output video: C:\Perforce\qa\ScalingDetector\video_editor_automation\output\WhatsApp Video 2025-12-06 at 22.53.28_edited.mp4

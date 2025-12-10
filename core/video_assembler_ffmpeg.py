@@ -197,7 +197,7 @@ class FFmpegVideoAssembler:
                     sentiment = segment['data'].get('sentiment', 'neutral')
                     font_size_mod = segment['data'].get('font_size_modifier', 1.0)
                     
-                    # FIX: Build up text cumulatively (2 words at a time, keeping previous)
+                    # FIX: Build up text cumulatively with stepping stone layout
                     time_in_segment = current_time - segment['start']
                     words = text.split()
                     word_delay = settings.TEXT_WORD_DELAY
@@ -208,17 +208,20 @@ class FFmpegVideoAssembler:
                     total_words_to_show = min(len(words), (current_chunk + 1) * words_per_chunk)
                     
                     if total_words_to_show > 0:
-                        # Build staggered multi-line text with indentation
+                        # Build staggered multi-line text (stepping stones)
                         visible_words = words[:total_words_to_show]
                         
-                        # Create staggered lines (2 words per line with increasing indent)
+                        # Create staggered lines with visual indent
                         lines = []
                         for i in range(0, len(visible_words), words_per_chunk):
                             line_words = visible_words[i:i+words_per_chunk]
-                            indent = "    " * (i // words_per_chunk)  # Add indent for each line
-                            lines.append(indent + ' '.join(line_words))
+                            # Use spaces for indent (more visible)
+                            indent_spaces = "      " * (i // words_per_chunk)
+                            lines.append(indent_spaces + ' '.join(line_words))
                         
                         partial_text = '\n'.join(lines)
+                        
+                        logger.debug(f"Text at {current_time:.1f}s: {repr(partial_text)}")
                         
                         # FIX: Use pre-calculated fixed position for entire segment
                         safe_position = segment_positions[id(segment)]
