@@ -39,6 +39,12 @@ def resume_assembly(video_path: Path, timeline_json: Path, face_cache_pkl: Path)
             'data': seg['data']
         }
         
+        # FIX: Extend image segments from 1 second to 2 seconds
+        if seg['type'] in ['ai_image', 'custom_image']:
+            duration = converted_seg['end'] - converted_seg['start']
+            if duration < 2.0:
+                converted_seg['end'] = converted_seg['start'] + 2.0
+        
         if seg['type'] in ['video', 'ai_image', 'custom_image']:
             render_timeline.append(converted_seg)
         elif seg['type'] == 'text':
