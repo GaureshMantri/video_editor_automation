@@ -197,18 +197,18 @@ class FFmpegVideoAssembler:
                     sentiment = segment['data'].get('sentiment', 'neutral')
                     font_size_mod = segment['data'].get('font_size_modifier', 1.0)
                     
-                    # Calculate words to show based on time elapsed (ROLLING WINDOW)
+                    # Calculate which word pair to show (2 words at a time)
                     time_in_segment = current_time - segment['start']
                     words = text.split()
                     word_delay = settings.TEXT_WORD_DELAY
-                    current_word_idx = int(time_in_segment / word_delay)
+                    words_per_chunk = settings.TEXT_WORDS_PER_CHUNK
                     
-                    # Show max words at a time (rolling window)
-                    max_visible = settings.TEXT_MAX_WORDS_VISIBLE
-                    start_idx = max(0, current_word_idx - max_visible + 1)
-                    end_idx = min(len(words), current_word_idx + 1)
+                    # Calculate which chunk (pair) of words to show
+                    current_chunk = int(time_in_segment / word_delay)
+                    start_idx = current_chunk * words_per_chunk
+                    end_idx = min(len(words), start_idx + words_per_chunk)
                     
-                    if end_idx > start_idx:
+                    if start_idx < len(words):
                         partial_text = ' '.join(words[start_idx:end_idx])
                         
                         # FIX: Use pre-calculated fixed position for entire segment
@@ -252,21 +252,10 @@ class FFmpegVideoAssembler:
     
     def _get_safe_position(self, timestamp: float, safe_zones_map: Dict, 
                           frame_size: Tuple[int, int]) -> Tuple[int, int]:
-        """Get safe position avoiding faces, ensuring text stays in frame"""
-        # Find closest timestamp in safe zones
-        closest_time = min(safe_zones_map.keys(), 
-                          key=lambda t: abs(t - timestamp),
-                          default=None)
-        
-        if closest_time and safe_zones_map[closest_time]:
-            zone = safe_zones_map[closest_time][0]
-            # Use zone position but ensure it's not too close to edges
-            x = max(frame_size[0] // 4, min(zone.x + zone.width // 2, 3 * frame_size[0] // 4))
-            y = max(int(frame_size[1] * 0.20), min(zone.y + zone.height // 2, int(frame_size[1] * 0.85)))
-            return (x, y)
-        
-        # Default: bottom center with safe margin
-        return (frame_size[0] // 2, int(frame_size[1] * 0.70))
+        """Get safe position - always bottom center for captions"""
+        # FIX: Always use bottom center for caption-style text
+        # This ensures consistent positioning like professional captions
+        return (frame_size[0] // 2, int(frame_size[1] * 0.85))
     
     def assemble_final_video(self, original_video: Path, timeline: List[Dict],
                             text_segments: List[Dict], safe_zones_map: Dict,

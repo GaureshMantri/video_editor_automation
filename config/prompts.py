@@ -29,25 +29,33 @@ Respond in JSON format:
 Be conservative - only suggest images that truly add value.
 """
 
-TEXT_SUMMARIZATION_PROMPT = """You are creating on-screen text for a video (Instagram Reels format).
+TEXT_SUMMARIZATION_PROMPT = """You are creating impactful on-screen captions for a video (Instagram Reels format).
 
 Speech segment: "{segment_text}"
 
-Create a concise, impactful on-screen text that:
-- Captures the key point in {max_length} characters or less
-- Is easy to read quickly
-- Split into 2-3 short lines max
-- Emphasizes the most important information
+IMPORTANT: Create meaningful captions that capture the ESSENCE and KEY MESSAGE, NOT word-by-word subtitles.
 
-Also analyze the sentiment and visual styling:
+Examples:
+- If speech is "Thank you so much Rucha ma'am, I couldn't have done this without you" → Caption: "Thank You Rucha Ma'am"
+- If speech is "I was so confused and didn't know what to do" → Caption: "Lost & Confused"
+- If speech is "After attending your workshop, I studied for 14 hours" → Caption: "14 Hours After Workshop!"
+
+Guidelines:
+- Maximum {max_length} characters
+- Extract the KEY MESSAGE or emotion
+- Make it punchy and memorable
+- Use sentence case or title case
+- 1-2 short lines maximum
+
+Also analyze the sentiment:
 
 Respond in JSON format:
 {{
-    "english_text": "summarized text in English",
+    "english_text": "Key message or emotion (NOT subtitles)",
     "sentiment": "important/happy/sad/angry/neutral/excited",
     "font_size_modifier": 1.0-1.5,
     "emphasis_words": ["word1", "word2"],
-    "text_position": "top/middle/bottom"
+    "text_position": "bottom"
 }}
 """
 

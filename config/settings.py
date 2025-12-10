@@ -27,14 +27,15 @@ CONTEXT_WINDOW_SECONDS = 30
 MAX_TEXT_LENGTH = 60
 
 # Text Display Settings
-TEXT_FONT_SIZE = 42  # Optimized for phone/reels format
-TEXT_STROKE_WIDTH = 3  # Stroke for better visibility
+TEXT_FONT_SIZE = 48  # Optimized for phone/reels format
+TEXT_STROKE_WIDTH = 4  # Stroke for better visibility
 TEXT_SHADOW = True
 TEXT_SHADOW_OFFSET = (2, 2)
 TEXT_BACKGROUND_OPACITY = 0.8
-TEXT_ANIMATION = "word_by_word"  # Animate text appearance
-TEXT_WORD_DELAY = 0.35  # Seconds between words appearing (slower, smoother)
-TEXT_MAX_WORDS_VISIBLE = 6  # Max words visible at once (rolling window)
+TEXT_ANIMATION = "word_pairs"  # Show 2 words at a time
+TEXT_WORD_DELAY = 0.4  # Seconds between word pairs appearing
+TEXT_WORDS_PER_CHUNK = 2  # Show 2 words at a time
+TEXT_MAX_WORDS_VISIBLE = 2  # Only 2 words visible at once
 
 # Sentiment-based colors (RGB)
 SENTIMENT_COLORS = {
